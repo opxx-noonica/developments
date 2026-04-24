@@ -110,8 +110,7 @@ section.page{margin-top:120px;padding-bottom:20px}
 .pagos-callout{background:var(--paper-2);border-left:3px solid var(--coral);padding:20px 24px;font-size:13px;line-height:1.9}
 .pagos-callout strong{color:var(--ink);font-weight:500}
 
-/* Más aire entre pestañas y donut */
-.plan-tabs{display:flex;gap:4px;border-bottom:1px solid var(--line);margin-bottom:90px;flex-wrap:wrap}
+.plan-tabs{display:flex;gap:4px;border-bottom:1px solid var(--line);margin-bottom:80px;flex-wrap:wrap}
 .plan-tab{background:none;border:none;padding:14px 20px;font-size:13px;letter-spacing:0.08em;text-transform:uppercase;color:var(--ink-mute);cursor:pointer;border-bottom:2px solid transparent;transition:all .2s;font-family:inherit;touch-action:manipulation;-webkit-tap-highlight-color:rgba(232,93,63,.15);user-select:none}
 .plan-tab:hover{color:var(--ink)}
 .plan-tab.active{color:var(--coral);border-bottom-color:var(--coral)}
@@ -146,6 +145,11 @@ details summary:hover .chev{color:var(--coral)}
 .chev{width:18px;height:18px;flex-shrink:0;color:var(--coral);transition:transform .25s;order:-1}
 details[open] .chev{transform:rotate(45deg)}
 .acc-body{padding:0 4px 24px 42px;color:var(--ink-soft);font-size:14px;line-height:1.7;max-width:820px;text-align:justify}
+.acc-body p{margin-bottom:10px}
+.acc-body p:last-child{margin-bottom:0}
+.acc-body ul{margin:10px 0 10px 22px}
+.acc-body ul li{margin-bottom:6px}
+.acc-body strong{color:var(--ink);font-weight:500}
 
 /* Objeciones: comillas con el punto por fuera */
 .obj-section .sum-text::before{content:"«"}
@@ -172,8 +176,9 @@ section.page:first-of-type{margin-top:70px}
 .timeline{grid-template-columns:1fr;gap:24px}
 .timeline::before{display:none}
 .footer-grid{grid-template-columns:1fr}
-.plan-tabs{gap:0;margin-bottom:66px}
+.plan-tabs{gap:0;margin-bottom:56px}
 .plan-tab{padding:14px 14px;font-size:12px}
+.footer-bottom{flex-direction:column;gap:16px;align-items:flex-start}
 }
 </style>
 </head>
@@ -228,10 +233,10 @@ section.page:first-of-type{margin-top:70px}
 
 <div class="sub-head">Tipologías</div>
 <div class="tipos">
-<div class="tipo-card"><div class="tipo-code">Tipología 001</div><div class="tipo-name">Bajo · 1 dorm</div><div class="tipo-count"><span class="num">8</span><span class="lbl">unidades</span></div></div>
-<div class="tipo-card"><div class="tipo-code">Tipología 002</div><div class="tipo-name">Bajo · 2 dorm</div><div class="tipo-count"><span class="num">2</span><span class="lbl">unidades</span></div></div>
-<div class="tipo-card"><div class="tipo-code">Tipología 003</div><div class="tipo-name">Intermedio · 1 dorm</div><div class="tipo-count"><span class="num">16</span><span class="lbl">unidades</span></div></div>
-<div class="tipo-card"><div class="tipo-code">Tipología 004</div><div class="tipo-name">Intermedio · 2 dorm</div><div class="tipo-count"><span class="num">4</span><span class="lbl">unidades</span></div></div>
+<div class="tipo-card"><div class="tipo-code">Tipología 1</div><div class="tipo-name">Bajo · 1 dorm</div><div class="tipo-count"><span class="num">8</span><span class="lbl">unidades</span></div></div>
+<div class="tipo-card"><div class="tipo-code">Tipología 2</div><div class="tipo-name">Bajo · 2 dorm</div><div class="tipo-count"><span class="num">2</span><span class="lbl">unidades</span></div></div>
+<div class="tipo-card"><div class="tipo-code">Tipología 3</div><div class="tipo-name">Intermedio · 1 dorm</div><div class="tipo-count"><span class="num">16</span><span class="lbl">unidades</span></div></div>
+<div class="tipo-card"><div class="tipo-code">Tipología 4</div><div class="tipo-name">Intermedio · 2 dorm</div><div class="tipo-count"><span class="num">4</span><span class="lbl">unidades</span></div></div>
 </div>
 
 <div class="sub-head">Galería</div>
@@ -382,62 +387,87 @@ section.page:first-of-type{margin-top:70px}
 <div class="sec-head"><span class="sec-num">04</span><h2>Objeciones</h2></div>
 
 <div class="cat-block">
-<div class="cat-title">Diseño</div>
-<details><summary><svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 5v14M5 12h14"/></svg><span class="sum-text">Los acabados se ven estándar para el PVP que piden</span></summary><div class="acc-body">Las unidades incluyen de serie aerotermia, placas FV para ACS, carpintería climalit y acabados coordinados por el equipo de interiorismo del promotor. Los upgrades premium (cocina panelada, encimeras, packs de electrodomésticos) están disponibles mientras la obra esté en fase de estructura.</div></details>
-<details><summary><svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 5v14M5 12h14"/></svg><span class="sum-text">No puedo personalizar la vivienda a mi gusto</span></summary><div class="acc-body">Se admiten modificaciones de cocina (color del mueble, packs de electrodomésticos) durante la fase de estructura. El resto del acabado sigue la paleta unificada del proyecto para preservar la coherencia arquitectónica y el valor de reventa.</div></details>
-<details><summary><svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 5v14M5 12h14"/></svg><span class="sum-text">Parece un bloque residencial, no un producto exclusivo</span></summary><div class="acc-body">Son 30 unidades en 2 bloques de baja altura con piscina, solárium y zonas ajardinadas. La escala reducida, las tres plantas y la proporción 1:1 de parking y trastero mantienen el carácter residencial y diferenciado.</div></details>
-</div>
-
-<div class="cat-block">
-<div class="cat-title">Mantenimiento</div>
-<details><summary><svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 5v14M5 12h14"/></svg><span class="sum-text">Los gastos de comunidad me parecen elevados</span></summary><div class="acc-body">120,39 €/mes cubren mantenimiento de piscina, zonas ajardinadas, iluminación común, limpieza y seguro. En Sant Antoni, para promociones equivalentes con piscina comunitaria, la media de mercado está entre 110 y 150 €/mes.</div></details>
-<details><summary><svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 5v14M5 12h14"/></svg><span class="sum-text">Me preocupa el mantenimiento de la piscina y zonas comunes</span></summary><div class="acc-body">La comunidad tendrá contrato de mantenimiento profesional. El presupuesto anual ya contempla limpieza, tratamiento químico y reparaciones menores, y está cerrado en la memoria de la promotora.</div></details>
+<div class="cat-title">Zona</div>
+<details><summary><svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 5v14M5 12h14"/></svg><span class="sum-text">San Antonio no es tan exclusivo como otras zonas de la isla como Santa Eulalia o Marina Botafoch</span></summary><div class="acc-body">Aunque San Antonio tiene un perfil más relajado, Sa Serra es una zona residencial tranquila, alejada del bullicio turístico, y se encuentra a pocos minutos del mar. Ofrece una excelente relación calidad-precio en comparación con otras zonas.</div></details>
+<details><summary><svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 5v14M5 12h14"/></svg><span class="sum-text">No hay servicios suficientes cerca para una residencia habitual</span></summary><div class="acc-body">La zona cuenta con servicios básicos a poca distancia (supermercados, centros escolares, centros médicos y transporte público), lo que la hace adecuada tanto para uso vacacional como residencial.</div></details>
 </div>
 
 <div class="cat-block">
 <div class="cat-title">Precio</div>
-<details><summary><svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 5v14M5 12h14"/></svg><span class="sum-text">El PVP está por encima del €/m² medio de Sant Antoni</span></summary><div class="acc-body">El precio refleja obra nueva con calificación B, placas FV, aerotermia y plaza de parking + trastero incluidos. El stock de obra nueva en el cuadrante sur de Sant Antoni es muy limitado, lo que sostiene la prima.</div></details>
-<details><summary><svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 5v14M5 12h14"/></svg><span class="sum-text">Con IVA y gastos la inversión total se dispara</span></summary><div class="acc-body">El IVA del 10% está previsto en el calendario de pagos y se abona de forma prorrateada. El 75% del PVP se satisface en la escritura de marzo de 2028, lo que deja al comprador ~2 años para planificar la financiación.</div></details>
-</div>
-
-<div class="cat-block">
-<div class="cat-title">Privacidad</div>
-<details><summary><svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 5v14M5 12h14"/></svg><span class="sum-text">Las unidades están muy cerca entre sí</span></summary><div class="acc-body">Las 30 unidades se distribuyen en 2 bloques orientados para maximizar la privacidad visual. Las terrazas están separadas por paramentos laterales y la vegetación de las zonas comunes refuerza el aislamiento.</div></details>
-<details><summary><svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 5v14M5 12h14"/></svg><span class="sum-text">En temporada la piscina y zonas comunes van a estar saturadas</span></summary><div class="acc-body">30 unidades sobre ~60 m² de piscina y 500 m² de solárium permiten un uso distendido. Los 1ª residentes y los inversores suelen solaparse en distintos periodos, lo que equilibra la ocupación durante el año.</div></details>
+<details><summary><svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 5v14M5 12h14"/></svg><span class="sum-text">El precio parece elevado para un apartamento de 1 o 2 habitaciones</span></summary><div class="acc-body">Los precios reflejan la alta calidad constructiva, los acabados modernos y los servicios incluidos como piscina, solárium, parking y trastero, lo que no es habitual en promociones de este tamaño en la zona.</div></details>
+<details><summary><svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 5v14M5 12h14"/></svg><span class="sum-text">Por ese precio, podría encontrar algo con más metros cuadrados</span></summary><div class="acc-body">Sí, pero no obra nueva y no con este nivel de acabados. ABC Sa Serra está diseñada para maximizar el espacio interior y exterior útil. Cada tipología incluye terraza, trastero y plaza de parking, con una distribución optimizada para el confort diario.</div></details>
 </div>
 
 <div class="cat-block">
 <div class="cat-title">Servicios</div>
-<details><summary><svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 5v14M5 12h14"/></svg><span class="sum-text">No tiene conserjería ni portería 24/7</span></summary><div class="acc-body">Se prevé videoportero por unidad y control de accesos en el portal. La promoción es residencial, no apart-hotel: los perfiles que buscan conserjería suelen orientarse a producto hotelero o serviced apartments con cuotas muy superiores.</div></details>
-<details><summary><svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 5v14M5 12h14"/></svg><span class="sum-text">Está lejos de comercios y restauración de referencia</span></summary><div class="acc-body">El centro de San Josep está a 5 min en coche, con supermercado, farmacia, restauración y servicios básicos. Ibiza ciudad y Marina Ibiza, a 15-20 min. La tranquilidad del entorno es un valor diferencial frente a zonas más saturadas.</div></details>
+<details><summary><svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 5v14M5 12h14"/></svg><span class="sum-text">No hay gimnasio ni zonas deportivas en la comunidad</span></summary><div class="acc-body">La promoción se ha enfocado en priorizar servicios como piscina comunitaria, solárium en cubierta, trasteros y parking, más útiles para el estilo de vida local y vacacional. De todos modos, cerca de la comunidad hay gimnasios y zonas deportivas (The Bubble Club Ibiza, Can Pádel Ibiza, etc.).</div></details>
+<details><summary><svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 5v14M5 12h14"/></svg><span class="sum-text">El solárium es compartido, no privado</span></summary><div class="acc-body">El solárium compartido permite disfrutar de vistas abiertas y espacio adicional al aire libre sin incurrir en el coste de mantenimiento de terrazas privadas más grandes. Además, es una opción ideal para quienes buscan socializar o relajarse en comunidad.</div></details>
+</div>
+
+<div class="cat-block">
+<div class="cat-title">Diseño</div>
+<details><summary><svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 5v14M5 12h14"/></svg><span class="sum-text">Los apartamentos de 1 dormitorio pueden resultar justos para vivir todo el año</span></summary><div class="acc-body">Las unidades están pensadas para ofrecer una excelente funcionalidad y eficiencia del espacio, con terrazas exteriores que amplían el área habitable y buena entrada de luz natural, mejorando el confort diario.</div></details>
+<details><summary><svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 5v14M5 12h14"/></svg><span class="sum-text">No hay ducha en el segundo baño</span></summary><div class="acc-body">El promotor ha optado por una solución que responde a criterios de funcionalidad y confort a largo plazo: en lugar de instalar una segunda ducha, ha diseñado ese baño como aseo amplio, con el objetivo de ampliar el espacio en la cocina y permitir una zona independiente para la lavadora. De esta forma, se gana en almacenamiento y orden en la zona de día, sin sacrificar potencial.</div></details>
 </div>
 
 <div class="cat-block">
 <div class="cat-title">Sostenibilidad</div>
-<details><summary><svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 5v14M5 12h14"/></svg><span class="sum-text">Tiene energética B en lugar de A</span></summary><div class="acc-body">La calificación B es el estándar alcanzable en obra nueva con criterios de confort habitacional. Una calificación A exigiría inversiones en aislamiento, envolvente y equipos con impacto directo y significativo en el PVP.</div></details>
-<details><summary><svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 5v14M5 12h14"/></svg><span class="sum-text">Las placas solo cubren ACS, no la electricidad</span></summary><div class="acc-body">El diseño fotovoltaico prioriza la cobertura de ACS por ser el consumo más constante y estable durante todo el año. La instalación es ampliable por cada propietario a título particular tras la entrega.</div></details>
+<details><summary><svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 5v14M5 12h14"/></svg><span class="sum-text">No se menciona el uso de energías renovables</span></summary><div class="acc-body">La promoción cumple con los estándares de eficiencia energética actuales (certificación B) usando carpinterías de aluminio con rotura de puente térmico y aislamiento térmico, lo que reduce el consumo y mejora el confort térmico.</div></details>
+<details><summary><svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 5v14M5 12h14"/></svg><span class="sum-text">No tiene cargadores para coches eléctricos</span></summary><div class="acc-body">Aunque no se especifican cargadores individuales, en el aparcamiento se ha previsto la preinstalación para la recarga de vehículos eléctricos.</div></details>
 </div>
 
 <div class="cat-block">
-<div class="cat-title">Zona</div>
-<details><summary><svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 5v14M5 12h14"/></svg><span class="sum-text">Sant Antoni es zona de ocio masivo</span></summary><div class="acc-body">La promoción está en Carrer des Tords, en el cuadrante residencial de Sant Antoni, alejado del West End y de los circuitos de ocio nocturno. El entorno es tranquilo, con vivienda unifamiliar y calles poco transitadas.</div></details>
-<details><summary><svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 5v14M5 12h14"/></svg><span class="sum-text">Está lejos de las mejores playas y de Ibiza ciudad</span></summary><div class="acc-body">Cala Bassa, Cala Conta y Cala Gracioneta están a 5-10 min. Ibiza ciudad y Marina Ibiza a 15-20 min. Ubicación equilibrada para 1ª residencia con uso frecuente e inversión con uso personal puntual.</div></details>
+<div class="cat-title">Privacidad</div>
+<details><summary><svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 5v14M5 12h14"/></svg><span class="sum-text">Al tener piscina comunitaria y solárium compartido, puede que no haya suficiente privacidad</span></summary><div class="acc-body">El diseño del edificio y la distribución de los espacios priorizan la separación entre viviendas y zonas comunes, garantizando que cada unidad mantenga su privacidad tanto dentro como en las terrazas privadas. Además, se podría plantear un horario de uso de piscina con los propietarios de la comunidad.</div></details>
+<details><summary><svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 5v14M5 12h14"/></svg><span class="sum-text">Los porches de acceso podrían quedar muy expuestos visualmente</span></summary><div class="acc-body">Para mejorar la privacidad de los porches de planta baja sin comprometer la estética del conjunto arquitectónico, se pueden considerar soluciones complementarias, entre ellas el uso de toldos retráctiles como medida funcional y discreta.</div></details>
+</div>
+
+<div class="cat-block">
+<div class="cat-title">Mantenimiento</div>
+<details><summary><svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 5v14M5 12h14"/></svg><span class="sum-text">Los gastos de comunidad podrían ser altos por la piscina y solárium</span></summary><div class="acc-body">La promoción está pensada para tener costes comunes optimizados, sin servicios como conserje, gimnasio o grandes jardines que encarezcan la cuota mensual. De todos modos, tenemos referencias de otras comunidades, con montos inferiores a los 100 euros al mes.</div></details>
+<details><summary><svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 5v14M5 12h14"/></svg><span class="sum-text">¿Cómo se gestionará el mantenimiento del solárium compartido?</span></summary><div class="acc-body">Al ser una comunidad pequeña, la gestión del mantenimiento será sencilla y proporcional, y se podrá organizar mediante una comunidad de propietarios desde la entrega, favoreciendo el control de gastos y uso responsable.</div></details>
 </div>
 </section>
 
 <section class="page">
 <div class="sec-head"><span class="sec-num">05</span><h2>FAQs</h2></div>
 <div class="faq-accordion">
+
 <details><summary><svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 5v14M5 12h14"/></svg><span class="sum-text">¿Se pueden realizar visitas a la promoción o a una vivienda piloto?</span></summary><div class="acc-body">No, aún no se pueden realizar visitas a la promoción, y no habrá vivienda piloto.</div></details>
-<details><summary><svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 5v14M5 12h14"/></svg><span class="sum-text">¿Se trata de vivienda IBAVI?</span></summary><div class="acc-body">No se trata de vivienda IBAVI. La promoción está acogida al plan autonómico de vivienda a precio limitado (Decret 3/2024), lo que garantiza un precio máximo regulado por m² construido, pero se comercializa como vivienda libre con plena propiedad.</div></details>
-<details><summary><svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 5v14M5 12h14"/></svg><span class="sum-text">¿Cuáles son los gastos de comunidad?</span></summary><div class="acc-body">1.444,67 € anuales por vivienda (120,39 € mensuales). Incluye mantenimiento de zonas comunes, piscina, solárium, limpieza y seguro del edificio.</div></details>
+
+<details><summary><svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 5v14M5 12h14"/></svg><span class="sum-text">¿Se pueden solicitar las ayudas del IBAVI para la compra de una de estas unidades?</span></summary><div class="acc-body">Actualmente, las ayudas del IBAVI para la compra de vivienda <strong>solo pueden solicitarse para viviendas terminadas</strong>, que cuenten con el <strong>certificado final de obra</strong> y cuya escritura esté prevista en un <strong>plazo corto de tiempo</strong>. Dado que las viviendas de ABC Sa Serra están en fase de obra, <strong>no pueden acogerse a estas ayudas en este momento</strong>.</div></details>
+
+<details><summary><svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 5v14M5 12h14"/></svg><span class="sum-text">¿Cuáles son los gastos de comunidad?</span></summary><div class="acc-body">Los gastos de comunidad serían de 1.444,67 € anuales por vivienda (120,39 € mensuales), aunque dependería del tipo de unidad (1 o 2 habitaciones).</div></details>
+
 <details><summary><svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 5v14M5 12h14"/></svg><span class="sum-text">¿Cómo quedará la acera de la fachada?</span></summary><div class="acc-body">La acera de la fachada se hará más grande de la que hay actualmente.</div></details>
-<details><summary><svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 5v14M5 12h14"/></svg><span class="sum-text">¿Hay algún lavadero o espacio previsto para la lavadora?</span></summary><div class="acc-body">En los apartamentos de una habitación, las lavadoras irán en el aseo. En los de dos habitaciones, se prevé que irán en la cocina.</div></details>
+
+<details><summary><svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 5v14M5 12h14"/></svg><span class="sum-text">¿Hay algún lavadero o espacio previsto para la lavadora?</span></summary><div class="acc-body">Sí, en los apartamentos de una habitación, las lavadoras irán en el aseo. En los de dos habitaciones, se prevé que irán en la cocina.</div></details>
+
 <details><summary><svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 5v14M5 12h14"/></svg><span class="sum-text">¿Las cantidades entregadas están avaladas?</span></summary><div class="acc-body">Sí. Todas las cantidades entregadas a cuenta están avaladas por entidad bancaria durante toda la ejecución de la obra, conforme a la Ley 20/2015.</div></details>
-<details><summary><svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 5v14M5 12h14"/></svg><span class="sum-text">¿Se puede comprar como persona física o jurídica?</span></summary><div class="acc-body">Sí, se admite la compra tanto como persona física como jurídica, en ambos casos con los mismos planes de pago disponibles.</div></details>
+
+<details><summary><svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 5v14M5 12h14"/></svg><span class="sum-text">¿Se puede comprar ahora como persona física y más adelante cambiar a jurídica (o viceversa)?</span></summary><div class="acc-body">
+<p>Lo ideal es que el comprador decida desde el principio la figura con la que quiere adquirir la vivienda, ya sea como persona física o jurídica. Sin embargo, si más adelante desea hacer un cambio, es posible gestionarlo, aunque el proceso se complica dependiendo de la fase en la que se encuentre la compraventa:</p>
+<ul>
+<li><strong>Durante la reserva:</strong> es más sencillo realizar el cambio.</li>
+<li><strong>Después de firmar el contrato de compraventa:</strong> también es posible, pero requiere anular el contrato original, devolver las cantidades entregadas y formalizar uno nuevo con la nueva titularidad, lo cual implica trámites administrativos y bancarios adicionales.</li>
+</ul>
+<p>Por eso se recomienda tomar esta decisión desde el inicio.</p>
+<p>El promotor solo contempla cambios de titularidad si se trata de una modificación legítima por parte del comprador original (por ejemplo, incluir a un familiar directo o una sociedad de la que sea socio mayoritario). No se aceptan cesiones a terceros.</p>
+</div></details>
+
 <details><summary><svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 5v14M5 12h14"/></svg><span class="sum-text">¿Para qué sirven las placas fotovoltaicas de la cubierta comunitaria?</span></summary><div class="acc-body">Las placas fotovoltaicas instaladas en la cubierta comunitaria están destinadas a la producción de agua caliente sanitaria (ACS) para las viviendas.</div></details>
-<details><summary><svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 5v14M5 12h14"/></svg><span class="sum-text">¿Parking y trastero están incluidos en el precio?</span></summary><div class="acc-body">Sí, cada vivienda incluye una plaza de parking y un trastero como parte del precio de compra.</div></details>
-<details><summary><svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 5v14M5 12h14"/></svg><span class="sum-text">¿Se puede personalizar la cocina o los acabados?</span></summary><div class="acc-body">La memoria de calidades está cerrada. En función del momento de la compra y del estado de la obra, podrán valorarse modificaciones puntuales con el estudio técnico del promotor.</div></details>
+
+<details><summary><svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 5v14M5 12h14"/></svg><span class="sum-text">¿El parking y el trastero están incluidos en el precio?</span></summary><div class="acc-body">Sí, cada vivienda incluye un parking y un trastero.</div></details>
+
+<details><summary><svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 5v14M5 12h14"/></svg><span class="sum-text">¿Se puede personalizar la cocina?</span></summary><div class="acc-body">
+<p>Sí, nuestros equipos de interiorismo han diseñado tres modelos de cocina:</p>
+<ul>
+<li><strong>Azul:</strong> inspirado en el mar, profundo y sereno (con sobrecoste).</li>
+<li><strong>Blanco:</strong> símbolo de limpieza, luz y minimalismo.</li>
+<li><strong>Madera:</strong> cálido y natural, como la arena y la tierra de Ibiza.</li>
+</ul>
+</div></details>
+
 </div>
 </section>
 

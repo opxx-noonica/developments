@@ -5,434 +5,541 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>ABC Sa Serra · Dossier interno</title>
 <style>
-@font-face{font-family:'SangBleu Sunrise';src:url('../shared/fonts/sangbleusunrise-light.ttf') format('truetype');font-weight:300;font-style:normal;font-display:swap}
-@font-face{font-family:'SangBleu Sunrise';src:url('../shared/fonts/sangbleusunrise-medium.ttf') format('truetype');font-weight:500;font-style:normal;font-display:swap}
-@font-face{font-family:'SangBleu Sunrise';src:url('../shared/fonts/sangbleusunrise-bold.ttf') format('truetype');font-weight:700;font-style:normal;font-display:swap}
-@font-face{font-family:'Apercu Pro';src:url('../shared/fonts/apercu-light-pro.otf') format('opentype');font-weight:300;font-style:normal;font-display:swap}
-@font-face{font-family:'Apercu Pro';src:url('../shared/fonts/apercu-medium-pro.otf') format('opentype');font-weight:500;font-style:normal;font-display:swap}
-:root{--ink:#111111;--ink-soft:#3d3d3d;--ink-mute:#8a8680;--paper:#f4f1ea;--paper-2:#ebe7dd;--line:#d9d3c7;--line-soft:#e3ddd1;--coral:#E85D3F;--white:#ffffff;--ff-serif:'SangBleu Sunrise','Cormorant Garamond','Playfair Display',Georgia,serif;--ff-sans:'Apercu Pro','Inter','Helvetica Neue',Arial,sans-serif}
-*{box-sizing:border-box;margin:0;padding:0}
-html,body{background:var(--paper);color:var(--ink);font-family:var(--ff-sans);font-weight:300;font-size:15px;line-height:1.55;-webkit-font-smoothing:antialiased}
-.serif{font-family:var(--ff-serif);font-weight:500;letter-spacing:-0.01em}
-.page{max-width:1040px;margin:0 auto;padding:0 48px}
-.coral{color:var(--coral)}
-a{color:var(--coral);text-decoration:none;border-bottom:1px solid transparent;transition:border-color .2s}
-a:hover{border-bottom-color:var(--coral)}
-.topbar{display:flex;align-items:center;justify-content:space-between;padding:28px 48px;max-width:1040px;margin:0 auto}
-.topbar .logo{height:22px;width:auto}
-.top-meta{display:flex;flex-direction:column;align-items:flex-end;gap:4px;font-size:11px;letter-spacing:0.18em;text-transform:uppercase;color:var(--ink-soft)}
-.top-meta .label{font-weight:500;color:var(--ink)}
-.top-meta .version{color:var(--ink-mute)}
-.hero{padding:64px 0 100px}
-.hero-eyebrow{font-size:11px;letter-spacing:0.22em;text-transform:uppercase;color:var(--coral);margin-bottom:28px;font-weight:500}
-.hero h1{font-size:clamp(52px,7vw,96px);line-height:1;font-weight:500;margin-bottom:32px;letter-spacing:-0.02em}
-.hero-slogan{font-family:var(--ff-serif);font-weight:300;font-style:italic;font-size:clamp(24px,3vw,34px);line-height:1.2;color:var(--ink-soft);margin-bottom:36px;max-width:640px;letter-spacing:-0.005em}
-.hero-tag{display:inline-block;background:var(--ink);color:var(--white);padding:11px 20px;font-size:11px;font-weight:500;letter-spacing:0.18em;text-transform:uppercase;margin-bottom:56px}
-.hero-grid{display:grid;grid-template-columns:1.3fr 1fr;gap:24px;align-items:stretch}
-.hero-img{width:100%;height:100%;object-fit:cover;display:block;min-height:340px;background:var(--paper-2)}
-.hero-stats{display:grid;grid-template-columns:1fr 1fr;gap:14px}
-.stat{background:var(--paper-2);padding:22px 20px;border-left:2px solid var(--coral);display:flex;flex-direction:column;justify-content:center}
-.stat .lbl{font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:var(--ink-mute);margin-bottom:10px}
-.stat .big{font-family:var(--ff-serif);font-weight:500;font-size:26px;line-height:1;white-space:nowrap}
-section.page{margin-top:130px;padding-bottom:20px}
-.sec-head{display:flex;align-items:baseline;gap:18px;margin-bottom:64px;flex-wrap:wrap}
-.sec-num{font-family:var(--ff-serif);font-weight:500;font-size:15px;color:var(--coral);letter-spacing:0.04em}
-.sec-head h2{font-family:var(--ff-serif);font-size:clamp(30px,3.5vw,42px);font-weight:500;line-height:1.05;letter-spacing:-0.01em}
-.sub-head{font-size:11px;letter-spacing:0.22em;text-transform:uppercase;color:var(--ink-mute);margin-top:96px;margin-bottom:28px;font-weight:500}
-.sub-head:first-child{margin-top:0}
-.producto-grid{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:start}
-.producto-copy h3{font-family:var(--ff-serif);font-size:24px;font-weight:500;margin-bottom:20px}
-.producto-copy p{color:var(--ink-soft);margin-bottom:16px;line-height:1.7;text-align:justify}
-.ficha-label{font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:var(--ink);margin-bottom:20px;font-weight:500}
-.ficha-row{display:grid;grid-template-columns:130px 1fr;gap:20px;padding:12px 0;border-bottom:1px solid var(--line-soft);font-size:14px;align-items:baseline}
-.ficha-row:first-of-type{border-top:1px solid var(--line-soft)}
-.ficha-row .k{font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:var(--ink-mute)}
-.ficha-row .v{color:var(--ink);line-height:1.4;font-weight:500}
-.ficha-row .v a{color:var(--ink);border-bottom:1px solid var(--line)}
-.ficha-row .v a:hover{color:var(--coral);border-bottom-color:var(--coral)}
-.tipos{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
-.tipo-card{background:var(--paper-2);padding:24px 22px 24px;border-top:2px solid var(--coral);display:flex;flex-direction:column;gap:12px;min-height:180px}
-.tipo-code{font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:var(--ink-mute)}
-.tipo-name{font-family:var(--ff-serif);font-weight:500;font-size:20px;line-height:1.2}
-.tipo-count{display:flex;align-items:baseline;gap:10px;margin-top:auto;padding-top:16px}
-.tipo-count .num{font-family:var(--ff-serif);font-weight:500;font-size:36px;color:var(--coral);line-height:1}
-.tipo-count .lbl{font-size:12px;color:var(--ink-soft)}
-.slider{position:relative;width:100%}
-.slider-viewport{overflow:hidden;border-radius:2px;background:var(--paper-2)}
-.slider-track{display:flex;transition:transform .5s cubic-bezier(.4,0,.2,1)}
-.slide{flex:0 0 100%;aspect-ratio:16/10;position:relative;background:var(--paper-2)}
-.slide img{width:100%;height:100%;object-fit:cover;display:block}
-.slide-caption{position:absolute;bottom:16px;left:16px;background:rgba(17,17,17,.78);color:#fff;padding:6px 12px;font-size:10px;letter-spacing:0.18em;text-transform:uppercase}
-.slider-nav{display:flex;justify-content:space-between;align-items:center;margin-top:22px}
-.slider-counter{font-family:var(--ff-serif);font-weight:500;font-size:16px;color:var(--ink-mute);letter-spacing:0.06em}
-.slider-counter .cur{color:var(--ink);font-size:22px}
-.slider-btns{display:flex;gap:10px}
-.slider-btn{width:40px;height:40px;border:1px solid var(--line);background:transparent;cursor:pointer;display:flex;align-items:center;justify-content:center;color:var(--ink);transition:all .2s;border-radius:2px;touch-action:manipulation}
-.slider-btn:hover{background:var(--coral);border-color:var(--coral);color:#fff}
-.slider-btn svg{width:16px;height:16px}
-.slider-dots{display:flex;justify-content:center;gap:8px;margin-top:20px;flex-wrap:wrap}
-.slider-dot{width:6px;height:6px;border-radius:50%;background:var(--line);border:none;cursor:pointer;padding:0;transition:all .2s;touch-action:manipulation}
-.slider-dot.active{background:var(--coral);width:24px;border-radius:3px}
-.timeline{display:grid;grid-template-columns:repeat(3,1fr);gap:0;position:relative}
-.timeline::before{content:"";position:absolute;top:18px;left:8%;right:8%;height:1px;background:var(--line);z-index:0}
-.milestone{position:relative;z-index:1;text-align:center}
-.milestone .dot{width:14px;height:14px;border-radius:50%;background:var(--paper);border:2px solid var(--coral);margin:10px auto 22px}
-.milestone.done .dot{background:var(--coral)}
-.milestone .date{font-family:var(--ff-serif);font-weight:500;font-size:26px}
-.milestone .label{font-size:11px;letter-spacing:0.18em;text-transform:uppercase;color:var(--ink-mute);margin-top:6px}
-.pagos-intro{display:grid;grid-template-columns:1fr 1fr;gap:40px;margin-bottom:56px;align-items:start}
-.pagos-intro p{color:var(--ink-soft);font-size:15px;line-height:1.7;text-align:justify}
-.pagos-callout{background:var(--paper-2);border-left:3px solid var(--coral);padding:20px 24px;font-size:13px;line-height:1.9}
-.pagos-callout strong{color:var(--ink);font-weight:500}
-.plan-tabs{display:flex;gap:4px;border-bottom:1px solid var(--line);margin-bottom:90px;flex-wrap:wrap}
-.plan-tab{background:none;border:none;padding:14px 20px;font-size:13px;letter-spacing:0.08em;text-transform:uppercase;color:var(--ink-mute);cursor:pointer;border-bottom:2px solid transparent;transition:all .2s;font-family:inherit;touch-action:manipulation;-webkit-tap-highlight-color:rgba(232,93,63,.15);user-select:none}
-.plan-tab:hover{color:var(--ink)}
-.plan-tab.active{color:var(--coral);border-bottom-color:var(--coral)}
-.plan{display:none;grid-template-columns:240px 1fr;gap:56px;align-items:center}
-.plan.active{display:grid}
-.donut-wrap{position:relative;width:220px;height:220px;margin:0 auto}
-.donut-center{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center}
-.donut-center .kind{font-size:10px;letter-spacing:0.22em;text-transform:uppercase;color:var(--ink-mute);margin-bottom:6px}
-.donut-center .variant{font-family:var(--ff-serif);font-weight:500;font-size:26px;line-height:1;color:var(--coral)}
-.steps{display:flex;flex-direction:column;gap:12px}
-.step{display:grid;grid-template-columns:auto 1fr auto;gap:14px;align-items:center;padding:14px 18px;background:var(--paper-2);border-radius:2px}
-.step-dot{width:12px;height:12px;border-radius:2px;flex-shrink:0}
-.step-main{display:flex;flex-direction:column;gap:2px}
-.step-label{font-size:13px;color:var(--ink);font-weight:500}
-.step-when{font-size:11px;color:var(--ink-mute);letter-spacing:0.04em}
-.step-pct{font-family:var(--ff-serif);font-weight:500;font-size:18px;color:var(--ink-soft)}
-.cat-block{margin-bottom:48px}
-.cat-block:last-child{margin-bottom:0}
-.cat-title{font-family:var(--ff-serif);font-weight:500;font-size:22px;color:var(--coral);margin-bottom:8px;padding-bottom:14px}
-details{border-bottom:1px solid var(--line-soft);background:transparent}
-details:first-of-type{border-top:1px solid var(--line-soft)}
-.faq-accordion details:first-of-type{border-top:1px solid var(--line-soft)}
-details summary{list-style:none;padding:22px 4px;cursor:pointer;display:flex;align-items:center;gap:20px;transition:color .2s}
-details summary::-webkit-details-marker{display:none}
-details summary:hover{color:var(--coral)}
-details summary:hover .chev{color:var(--coral)}
-.sum-text{flex:1;font-family:var(--ff-serif);font-weight:500;font-size:19px;line-height:1.3;color:var(--ink)}
-.chev{width:18px;height:18px;flex-shrink:0;color:var(--coral);transition:transform .25s;order:-1}
-details[open] .chev{transform:rotate(45deg)}
-.acc-body{padding:0 4px 24px 42px;color:var(--ink-soft);font-size:14px;line-height:1.7;max-width:820px;text-align:justify}
-.obj-section .sum-text::before{content:"«"}
-.obj-section .sum-text::after{content:"»."}
-footer{background:var(--ink);color:#e8e5de;padding:96px 0 48px;margin-top:200px}
-.footer-grid{display:grid;grid-template-columns:1fr auto;gap:40px;align-items:center;max-width:1040px;margin:0 auto;padding:0 48px}
-.footer-title{font-family:var(--ff-serif);font-weight:500;font-size:32px;line-height:1.2;max-width:580px}
-.footer-title .coral{color:var(--coral)}
-.wiki-btn{display:inline-flex;align-items:center;gap:10px;background:var(--coral);color:#fff;padding:16px 28px;text-decoration:none;font-size:13px;letter-spacing:0.12em;text-transform:uppercase;border-radius:2px;transition:background .2s;border-bottom:none;white-space:nowrap}
-.wiki-btn:hover{background:#d14d30;border-bottom:none}
-.footer-bottom{max-width:1040px;margin:56px auto 0;padding:24px 48px 0;border-top:1px solid #2a2a2a;display:flex;justify-content:space-between;align-items:center;gap:20px;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:#8a8680}
-.footer-bottom .logo{height:16px;flex-shrink:0;filter:invert(1) brightness(2)}
-@media (max-width:960px){
-.page,.topbar,.footer-grid,.footer-bottom{padding-left:24px;padding-right:24px}
-section.page:first-of-type{margin-top:70px}
-.hero-grid{grid-template-columns:1fr}
-.producto-grid{grid-template-columns:1fr;gap:48px}
-.tipos{grid-template-columns:repeat(2,1fr)}
-.plan{grid-template-columns:1fr;gap:32px}
-.plan.active{display:grid}
-.pagos-intro{grid-template-columns:1fr}
-.timeline{grid-template-columns:1fr;gap:24px}
-.timeline::before{display:none}
-.footer-grid{grid-template-columns:1fr}
-.plan-tabs{gap:0;margin-bottom:66px}
-.plan-tab{padding:14px 14px;font-size:12px}
-.footer-bottom{flex-direction:column;align-items:flex-start;gap:18px;text-align:left}
-}
+  /* Brand fonts · Noonica */
+  @font-face{
+    font-family:'SangBleu Sunrise';
+    src:url('../shared/fonts/sangbleusunrise-light.ttf') format('truetype');
+    font-weight:300;font-style:normal;font-display:swap;
+  }
+  @font-face{
+    font-family:'SangBleu Sunrise';
+    src:url('../shared/fonts/sangbleusunrise-medium.ttf') format('truetype');
+    font-weight:500;font-style:normal;font-display:swap;
+  }
+  @font-face{
+    font-family:'SangBleu Sunrise';
+    src:url('../shared/fonts/sangbleusunrise-bold.ttf') format('truetype');
+    font-weight:700;font-style:normal;font-display:swap;
+  }
+  @font-face{
+    font-family:'Apercu Pro';
+    src:url('../shared/fonts/apercu-light-pro.otf') format('opentype');
+    font-weight:300;font-style:normal;font-display:swap;
+  }
+  @font-face{
+    font-family:'Apercu Pro';
+    src:url('../shared/fonts/apercu-medium-pro.otf') format('opentype');
+    font-weight:500;font-style:normal;font-display:swap;
+  }
+
+  :root{
+    --ink:#111111;
+    --ink-soft:#3d3d3d;
+    --ink-mute:#8a8680;
+    --paper:#f4f1ea;
+    --paper-2:#ebe7dd;
+    --line:#d9d3c7;
+    --line-soft:#e3ddd1;
+    --coral:#E85D3F;
+    --white:#ffffff;
+    --ff-serif:'SangBleu Sunrise','Cormorant Garamond','Playfair Display',Georgia,serif;
+    --ff-sans:'Apercu Pro','Inter','Helvetica Neue',Arial,sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{background:var(--paper);color:var(--ink);font-family:var(--ff-sans);font-weight:300;font-size:15px;line-height:1.55;-webkit-font-smoothing:antialiased}
+  .serif{font-family:var(--ff-serif);font-weight:500;letter-spacing:-0.01em}
+  .page{max-width:1040px;margin:0 auto;padding:0 48px}
+  .coral{color:var(--coral)}
+  a{color:var(--coral);text-decoration:none;border-bottom:1px solid transparent;transition:border-color .2s}
+  a:hover{border-bottom-color:var(--coral)}
+
+  .topbar{display:flex;align-items:center;justify-content:space-between;padding:28px 48px;max-width:1040px;margin:0 auto}
+  .topbar .logo{height:22px;width:auto}
+  .top-meta{display:flex;flex-direction:column;align-items:flex-end;gap:4px;font-size:11px;letter-spacing:0.18em;text-transform:uppercase;color:var(--ink-soft)}
+  .top-meta .version{color:var(--ink-mute)}
+
+  .hero{padding:64px 0 100px}
+  .hero-eyebrow{font-size:11px;letter-spacing:0.22em;text-transform:uppercase;color:var(--coral);margin-bottom:28px;font-weight:500}
+  .hero h1{font-size:clamp(52px,7vw,96px);line-height:1;font-weight:500;margin-bottom:32px;letter-spacing:-0.02em}
+  .hero-slogan{font-family:var(--ff-serif);font-weight:300;font-style:italic;font-size:clamp(24px,3vw,34px);line-height:1.2;color:var(--ink-soft);margin-bottom:36px;max-width:640px;letter-spacing:-0.005em}
+  .hero-tag{display:inline-block;background:var(--ink);color:var(--white);padding:11px 20px;font-size:11px;letter-spacing:0.18em;text-transform:uppercase;margin-bottom:56px}
+  .hero-grid{display:grid;grid-template-columns:1.3fr 1fr;gap:24px;align-items:stretch}
+  .hero-img{width:100%;height:100%;object-fit:cover;display:block;min-height:340px;background:var(--paper-2)}
+  .hero-stats{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  .stat{background:var(--paper-2);padding:22px 20px;border-left:2px solid var(--coral);display:flex;flex-direction:column;justify-content:center}
+  .stat .lbl{font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:var(--ink-mute);margin-bottom:10px}
+  .stat .big{font-family:var(--ff-serif);font-weight:500;font-size:26px;line-height:1;white-space:nowrap}
+
+  /* Separación entre secciones · 140px, Producto más corto en móvil */
+  section.page{margin-top:140px;padding-bottom:20px}
+
+  .sec-head{display:flex;align-items:baseline;gap:18px;margin-bottom:64px;flex-wrap:wrap}
+  .sec-num{font-family:var(--ff-serif);font-weight:500;font-size:15px;color:var(--coral);letter-spacing:0.04em}
+  .sec-head h2{font-family:var(--ff-serif);font-size:clamp(30px,3.5vw,42px);font-weight:500;line-height:1.05;letter-spacing:-0.01em}
+
+  .sub-head{font-size:11px;letter-spacing:0.22em;text-transform:uppercase;color:var(--ink-mute);margin-top:96px;margin-bottom:28px;font-weight:500}
+  .sub-head:first-child{margin-top:0}
+
+  .producto-grid{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:start}
+  .producto-copy h3{font-family:var(--ff-serif);font-size:24px;font-weight:500;margin-bottom:20px}
+  .producto-copy p{color:var(--ink-soft);margin-bottom:16px;line-height:1.7;text-align:justify}
+  .ficha-label{font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:var(--ink-mute);margin-bottom:20px;font-weight:500}
+  .ficha-row{display:grid;grid-template-columns:130px 1fr;gap:20px;padding:12px 0;border-bottom:1px solid var(--line-soft);font-size:14px;align-items:baseline}
+  .ficha-row:first-of-type{border-top:1px solid var(--line-soft)}
+  .ficha-row .k{font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:var(--ink-mute)}
+  .ficha-row .v{color:var(--ink);line-height:1.4}
+  .ficha-row .v a{color:var(--ink);border-bottom:1px solid var(--line)}
+  .ficha-row .v a:hover{color:var(--coral);border-bottom-color:var(--coral)}
+
+  .tipos{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+  .tipo-card{background:var(--paper-2);padding:24px 22px 24px;border-top:2px solid var(--coral);display:flex;flex-direction:column;gap:12px;min-height:180px}
+  .tipo-code{font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:var(--ink-mute)}
+  .tipo-name{font-family:var(--ff-serif);font-weight:500;font-size:20px;line-height:1.2}
+  .tipo-count{display:flex;align-items:baseline;gap:10px;margin-top:auto;padding-top:16px}
+  .tipo-count .num{font-family:var(--ff-serif);font-weight:500;font-size:36px;color:var(--coral);line-height:1}
+  .tipo-count .lbl{font-size:12px;color:var(--ink-soft)}
+
+  .slider{position:relative;width:100%}
+  .slider-viewport{overflow:hidden;border-radius:2px;background:var(--paper-2)}
+  .slider-track{display:flex;transition:transform .5s cubic-bezier(.4,0,.2,1)}
+  .slide{flex:0 0 100%;aspect-ratio:16/10;position:relative;background:var(--paper-2)}
+  .slide img{width:100%;height:100%;object-fit:cover;display:block}
+  .slide-caption{position:absolute;bottom:16px;left:16px;background:rgba(17,17,17,.78);color:#fff;padding:6px 12px;font-size:10px;letter-spacing:0.18em;text-transform:uppercase}
+  .slider-nav{display:flex;justify-content:space-between;align-items:center;margin-top:22px}
+  .slider-counter{font-family:var(--ff-serif);font-weight:500;font-size:16px;color:var(--ink-mute);letter-spacing:0.06em}
+  .slider-counter .cur{color:var(--ink);font-size:22px}
+  .slider-btns{display:flex;gap:10px}
+  .slider-btn{width:40px;height:40px;border:1px solid var(--line);background:transparent;cursor:pointer;display:flex;align-items:center;justify-content:center;color:var(--ink);transition:all .2s;border-radius:2px;touch-action:manipulation}
+  .slider-btn:hover{background:var(--coral);border-color:var(--coral);color:#fff}
+  .slider-btn svg{width:16px;height:16px}
+  .slider-dots{display:flex;justify-content:center;gap:8px;margin-top:20px;flex-wrap:wrap}
+  .slider-dot{width:6px;height:6px;border-radius:50%;background:var(--line);border:none;cursor:pointer;padding:0;transition:all .2s;touch-action:manipulation}
+  .slider-dot.active{background:var(--coral);width:24px;border-radius:3px}
+
+  .timeline{display:grid;grid-template-columns:repeat(3,1fr);gap:0;position:relative}
+  .timeline::before{content:"";position:absolute;top:18px;left:8%;right:8%;height:1px;background:var(--line);z-index:0}
+  .milestone{position:relative;z-index:1;text-align:center}
+  .milestone .dot{width:14px;height:14px;border-radius:50%;background:var(--paper);border:2px solid var(--coral);margin:10px auto 22px}
+  .milestone.done .dot{background:var(--coral)}
+  .milestone .date{font-family:var(--ff-serif);font-weight:500;font-size:26px}
+  .milestone .label{font-size:11px;letter-spacing:0.18em;text-transform:uppercase;color:var(--ink-mute);margin-top:6px}
+
+  .pagos-intro{display:grid;grid-template-columns:1fr 1fr;gap:40px;margin-bottom:56px;align-items:start}
+  .pagos-intro p{color:var(--ink-soft);font-size:15px;line-height:1.7;text-align:justify}
+  .pagos-callout{background:var(--paper-2);border-left:3px solid var(--coral);padding:20px 24px;font-size:13px;line-height:1.9}
+  .pagos-callout strong{color:var(--ink);font-weight:500}
+
+  /* Más aire entre pestañas y donut */
+  .plan-tabs{display:flex;gap:4px;border-bottom:1px solid var(--line);margin-bottom:80px;flex-wrap:wrap}
+  .plan-tab{background:none;border:none;padding:14px 20px;font-size:13px;letter-spacing:0.08em;text-transform:uppercase;color:var(--ink-mute);cursor:pointer;border-bottom:2px solid transparent;transition:all .2s;font-family:inherit;touch-action:manipulation;-webkit-tap-highlight-color:rgba(232,93,63,.15);user-select:none}
+  .plan-tab:hover{color:var(--ink)}
+  .plan-tab.active{color:var(--coral);border-bottom-color:var(--coral)}
+
+  .plan{display:none;grid-template-columns:240px 1fr;gap:56px;align-items:center}
+  .plan.active{display:grid}
+
+  .donut-wrap{position:relative;width:220px;height:220px;margin:0 auto}
+  .donut-center{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center}
+  .donut-center .kind{font-size:10px;letter-spacing:0.22em;text-transform:uppercase;color:var(--ink-mute);margin-bottom:6px}
+  .donut-center .variant{font-family:var(--ff-serif);font-weight:500;font-size:26px;line-height:1;color:var(--coral)}
+
+  .steps{display:flex;flex-direction:column;gap:12px}
+  .step{display:grid;grid-template-columns:auto 1fr auto;gap:14px;align-items:center;padding:14px 18px;background:var(--paper-2);border-radius:2px}
+  .step-dot{width:12px;height:12px;border-radius:2px;flex-shrink:0}
+  .step-main{display:flex;flex-direction:column;gap:2px}
+  .step-label{font-size:13px;color:var(--ink);font-weight:500}
+  .step-when{font-size:11px;color:var(--ink-mute);letter-spacing:0.04em}
+  .step-pct{font-family:var(--ff-serif);font-weight:500;font-size:18px;color:var(--ink-soft)}
+
+  .cat-block{margin-bottom:48px}
+  .cat-block:last-child{margin-bottom:0}
+  .cat-title{font-family:var(--ff-serif);font-weight:500;font-size:22px;color:var(--coral);margin-bottom:8px;padding-bottom:14px}
+  details{border-bottom:1px solid var(--line-soft);background:transparent}
+  details:first-of-type{border-top:1px solid var(--line-soft)}
+  .faq-accordion details:first-of-type{border-top:1px solid var(--line-soft)}
+  details summary{list-style:none;padding:22px 4px;cursor:pointer;display:flex;align-items:center;gap:20px;transition:color .2s}
+  details summary::-webkit-details-marker{display:none}
+  details summary:hover{color:var(--coral)}
+  details summary:hover .chev{color:var(--coral)}
+  .sum-text{flex:1;font-family:var(--ff-serif);font-weight:500;font-size:19px;line-height:1.3;color:var(--ink)}
+  .chev{width:18px;height:18px;flex-shrink:0;color:var(--coral);transition:transform .25s;order:-1}
+  details[open] .chev{transform:rotate(45deg)}
+  .acc-body{padding:0 4px 24px 42px;color:var(--ink-soft);font-size:14px;line-height:1.7;max-width:820px;text-align:justify}
+
+  /* Objeciones: comillas con el punto por fuera */
+  .obj-section .sum-text::before{content:"«"}
+  .obj-section .sum-text::after{content:"»."}
+
+  footer{background:var(--ink);color:#e8e5de;padding:96px 0 48px;margin-top:200px}
+  .footer-grid{display:grid;grid-template-columns:1fr auto;gap:40px;align-items:center;max-width:1040px;margin:0 auto;padding:0 48px}
+  .footer-title{font-family:var(--ff-serif);font-weight:500;font-size:32px;line-height:1.2;max-width:580px}
+  .footer-title .coral{color:var(--coral)}
+  .wiki-btn{display:inline-flex;align-items:center;gap:10px;background:var(--coral);color:#fff;padding:16px 28px;text-decoration:none;font-size:13px;letter-spacing:0.12em;text-transform:uppercase;border-radius:2px;transition:background .2s;border-bottom:none;white-space:nowrap}
+  .wiki-btn:hover{background:#d14d30;border-bottom:none}
+  .footer-bottom{max-width:1040px;margin:56px auto 0;padding:24px 48px 0;border-top:1px solid #2a2a2a;display:flex;justify-content:space-between;align-items:center;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:#8a8680}
+  .footer-bottom .logo{height:16px;filter:invert(1) brightness(2)}
+
+  @media (max-width:960px){
+    .page,.topbar,.footer-grid,.footer-bottom{padding-left:24px;padding-right:24px}
+    section.page:first-of-type{margin-top:80px}
+    .hero-grid{grid-template-columns:1fr}
+    .producto-grid{grid-template-columns:1fr;gap:48px}
+    .tipos{grid-template-columns:repeat(2,1fr)}
+    .plan{grid-template-columns:1fr;gap:32px}
+    .plan.active{display:grid}
+    .pagos-intro{grid-template-columns:1fr}
+    .timeline{grid-template-columns:1fr;gap:24px}
+    .timeline::before{display:none}
+    .footer-grid{grid-template-columns:1fr}
+    .plan-tabs{gap:0;margin-bottom:56px}
+    .plan-tab{padding:14px 14px;font-size:12px}
+  }
 </style>
 </head>
 <body>
 
 <div class="topbar">
-<img src="https://drive.google.com/thumbnail?id=1y5P8k3yEB_21t3jKwqSB1RLesr094tr8&sz=w400" alt="noonica" class="logo" />
-<div class="top-meta">
-<span class="label">Dossier interno</span>
-<span class="version js-date">22 abril 2026</span>
-</div>
+  <img src="https://drive.google.com/thumbnail?id=1y5P8k3yEB_21t3jKwqSB1RLesr094tr8&sz=w400" alt="noonica" class="logo" />
+  <div class="top-meta">
+    <span>Dossier interno</span>
+    <span class="version js-date">22 abril 2026</span>
+  </div>
 </div>
 
 <header class="page">
-<div class="hero">
-<div class="hero-eyebrow">En construcción</div>
-<h1 class="serif">ABC <span class="coral">Sa Serra</span></h1>
-<p class="hero-slogan">Comodidad y tranquilidad junto al mar.</p>
-<span class="hero-tag">Sant Antoni · Ibiza</span>
+  <div class="hero">
+    <div class="hero-eyebrow">Promoción en construcción</div>
+    <h1 class="serif">ABC <span class="coral">Sa Serra</span></h1>
+    <p class="hero-slogan">Comodidad y tranquilidad junto al mar.</p>
+    <span class="hero-tag">Sant Antoni · Ibiza</span>
 
-<div class="hero-grid">
-<img class="hero-img" src="https://drive.google.com/thumbnail?id=1LXCldaK52311Hu8-Ndw_185BaWLAq40t&sz=w2400" alt="ABC Sa Serra">
-<div class="hero-stats">
-<div class="stat"><div class="lbl">Unidades</div><div class="big">30</div></div>
-<div class="stat"><div class="lbl">Tipologías</div><div class="big">4</div></div>
-<div class="stat"><div class="lbl">Precios desde</div><div class="big">346.800 €</div></div>
-<div class="stat"><div class="lbl">Entrega</div><div class="big">2028</div></div>
-</div>
-</div>
-</div>
+    <div class="hero-grid">
+      <img class="hero-img" src="https://drive.google.com/thumbnail?id=1LXCldaK52311Hu8-Ndw_185BaWLAq40t&sz=w2400" alt="ABC Sa Serra">
+      <div class="hero-stats">
+        <div class="stat"><div class="lbl">Unidades</div><div class="big">30</div></div>
+        <div class="stat"><div class="lbl">Tipologías</div><div class="big">4</div></div>
+        <div class="stat"><div class="lbl">Precios desde</div><div class="big">346.800 €</div></div>
+        <div class="stat"><div class="lbl">Entrega</div><div class="big">2028</div></div>
+      </div>
+    </div>
+  </div>
 </header>
 
 <section class="page">
-<div class="sec-head"><span class="sec-num">01</span><h2>Producto</h2></div>
+  <div class="sec-head"><span class="sec-num">01</span><h2>Producto</h2></div>
 
-<div class="producto-grid">
-<div class="producto-copy">
-<h3>La promoción</h3>
-<p>ABC Sa Serra es una promoción de obra nueva en Sant Antoni de Portmany, desarrollada por OD Real Estate. El conjunto se compone de dos bloques que albergan 30 viviendas de 1 y 2 dormitorios, con piscina comunitaria, zonas comunes y soláriums ubicados en la cubierta de cada edificio.</p>
-<p>Todas las unidades incluyen plaza de parking y trastero en el PVP. La promoción cuenta con calificación energética proyectada B e incorpora placas fotovoltaicas para apoyo a la producción de ACS.</p>
-</div>
-<div>
-<div class="ficha-label">Ficha técnica</div>
-<div class="ficha-row"><div class="k">Código</div><div class="v">SAP1361</div></div>
-<div class="ficha-row"><div class="k">Unidades</div><div class="v">30 viviendas</div></div>
-<div class="ficha-row"><div class="k">Dormitorios</div><div class="v">1 y 2</div></div>
-<div class="ficha-row"><div class="k">Plantas</div><div class="v">3 niveles</div></div>
-<div class="ficha-row"><div class="k">Superficies</div><div class="v">De 40 a 76 m²</div></div>
-<div class="ficha-row"><div class="k">Ubicación</div><div class="v"><a href="https://www.google.com/maps/search/?api=1&query=Carrer+des+Tords+6+07820+Sant+Antoni+de+Portmany" target="_blank" rel="noopener">Carrer des Tords, 6<br>07820 Sant Antoni de Portmany</a></div></div>
-</div>
-</div>
+  <div class="producto-grid">
+    <div class="producto-copy">
+      <h3>La promoción</h3>
+      <p>ABC Sa Serra es una promoción de obra nueva en Sant Antoni de Portmany, desarrollada por OD Real Estate. El conjunto se compone de dos bloques que albergan 30 viviendas de 1 y 2 dormitorios, con piscina comunitaria, zonas comunes y soláriums ubicados en la cubierta de cada edificio.</p>
+      <p>Todas las unidades incluyen plaza de parking y trastero en el PVP. La promoción cuenta con calificación energética proyectada B e incorpora placas fotovoltaicas para apoyo a la producción de ACS.</p>
+    </div>
+    <div>
+      <div class="ficha-label">Ficha técnica</div>
+      <div class="ficha-row"><div class="k">Código</div><div class="v">SAP1361</div></div>
+      <div class="ficha-row"><div class="k">Unidades</div><div class="v">30 viviendas</div></div>
+      <div class="ficha-row"><div class="k">Dormitorios</div><div class="v">1 y 2</div></div>
+      <div class="ficha-row"><div class="k">Plantas</div><div class="v">3 niveles</div></div>
+      <div class="ficha-row"><div class="k">Superficies</div><div class="v">De 40 a 76 m²</div></div>
+      <div class="ficha-row"><div class="k">Ubicación</div><div class="v"><a href="https://www.google.com/maps/search/?api=1&query=Carrer+des+Tords+6+07820+Sant+Antoni+de+Portmany" target="_blank" rel="noopener">Carrer des Tords, 6<br>07820 Sant Antoni de Portmany</a></div></div>
+    </div>
+  </div>
 
-<div class="sub-head">Tipologías</div>
-<div class="tipos">
-<div class="tipo-card"><div class="tipo-code">Tipología 001</div><div class="tipo-name">Bajo · 1 dorm</div><div class="tipo-count"><span class="num">8</span><span class="lbl">unidades</span></div></div>
-<div class="tipo-card"><div class="tipo-code">Tipología 002</div><div class="tipo-name">Bajo · 2 dorm</div><div class="tipo-count"><span class="num">2</span><span class="lbl">unidades</span></div></div>
-<div class="tipo-card"><div class="tipo-code">Tipología 003</div><div class="tipo-name">Intermedio · 1 dorm</div><div class="tipo-count"><span class="num">16</span><span class="lbl">unidades</span></div></div>
-<div class="tipo-card"><div class="tipo-code">Tipología 004</div><div class="tipo-name">Intermedio · 2 dorm</div><div class="tipo-count"><span class="num">4</span><span class="lbl">unidades</span></div></div>
-</div>
+  <div class="sub-head">Tipologías</div>
+  <div class="tipos">
+    <div class="tipo-card"><div class="tipo-code">Tipología 001</div><div class="tipo-name">Bajo · 1 dorm</div><div class="tipo-count"><span class="num">8</span><span class="lbl">unidades</span></div></div>
+    <div class="tipo-card"><div class="tipo-code">Tipología 002</div><div class="tipo-name">Bajo · 2 dorm</div><div class="tipo-count"><span class="num">2</span><span class="lbl">unidades</span></div></div>
+    <div class="tipo-card"><div class="tipo-code">Tipología 003</div><div class="tipo-name">Intermedio · 1 dorm</div><div class="tipo-count"><span class="num">16</span><span class="lbl">unidades</span></div></div>
+    <div class="tipo-card"><div class="tipo-code">Tipología 004</div><div class="tipo-name">Intermedio · 2 dorm</div><div class="tipo-count"><span class="num">4</span><span class="lbl">unidades</span></div></div>
+  </div>
 
-<div class="sub-head">Galería</div>
-<div class="slider" id="gallery">
-<div class="slider-viewport">
-<div class="slider-track">
-<div class="slide"><img src="https://drive.google.com/thumbnail?id=1mPrs5_i7tEmbv4LBdm-NNmqS9qITH9RS&sz=w2400" alt="Comunidad 1"><span class="slide-caption">Comunidad</span></div>
-<div class="slide"><img src="https://drive.google.com/thumbnail?id=1ZlzOawDXEMTwWB2_BrPdOoenTxRtILEQ&sz=w2400" alt="Comunidad 2"><span class="slide-caption">Comunidad</span></div>
-<div class="slide"><img src="https://drive.google.com/thumbnail?id=1suqPw6j0xXUcro9QhPcF0qxVqybg2t5r&sz=w2400" alt="Comunidad 3"><span class="slide-caption">Comunidad</span></div>
-<div class="slide"><img src="https://drive.google.com/thumbnail?id=1AzR8eyrivrVbjkywaGgQoPG6qcx1_sQO&sz=w2400" alt="Comunidad 4"><span class="slide-caption">Comunidad</span></div>
-<div class="slide"><img src="https://drive.google.com/thumbnail?id=1C7ka-JdOq6t7zNrFL5Ywm3KRtlsgmSEp&sz=w2400" alt="Comunidad 5"><span class="slide-caption">Comunidad</span></div>
-<div class="slide"><img src="https://drive.google.com/thumbnail?id=1LXCldaK52311Hu8-Ndw_185BaWLAq40t&sz=w2400" alt="Unidad 1"><span class="slide-caption">Unidad</span></div>
-<div class="slide"><img src="https://drive.google.com/thumbnail?id=1ttVJu4-qynnHTfbRjG2EkzvCzMHR6IAT&sz=w2400" alt="Unidad 2"><span class="slide-caption">Unidad</span></div>
-<div class="slide"><img src="https://drive.google.com/thumbnail?id=1B5-LPtoPy5Wlkdb_VVbmqv-gYm8BHUqF&sz=w2400" alt="Unidad 3"><span class="slide-caption">Unidad</span></div>
-<div class="slide"><img src="https://drive.google.com/thumbnail?id=1wsVSUYwKS2jh1kG_9vrBAND11ScmReHZ&sz=w2400" alt="Unidad 4"><span class="slide-caption">Unidad</span></div>
-<div class="slide"><img src="https://drive.google.com/thumbnail?id=1HlMj4JEEVtPnHzhQ8FkMoyM_CQ7tBEiY&sz=w2400" alt="Unidad 5"><span class="slide-caption">Unidad</span></div>
-</div>
-</div>
-<div class="slider-nav">
-<div class="slider-counter"><span class="cur">01</span> / 10</div>
-<div class="slider-btns">
-<button class="slider-btn" data-dir="-1" aria-label="Anterior"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M15 18l-6-6 6-6"/></svg></button>
-<button class="slider-btn" data-dir="1" aria-label="Siguiente"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 6l6 6-6 6"/></svg></button>
-</div>
-</div>
-<div class="slider-dots"></div>
-</div>
-</section>
-<section class="page">
-<div class="sec-head"><span class="sec-num">02</span><h2>Cronograma</h2></div>
-<div class="timeline">
-<div class="milestone done"><div class="dot"></div><div class="date serif">Q2 2025</div><div class="label">Inicio de obra</div></div>
-<div class="milestone"><div class="dot"></div><div class="date serif">Q4 2027</div><div class="label">Fin de obra</div></div>
-<div class="milestone"><div class="dot"></div><div class="date serif">Q1 2028</div><div class="label">Entrega de llaves</div></div>
-</div>
+  <div class="sub-head">Galería</div>
+  <div class="slider" id="gallery">
+    <div class="slider-viewport">
+      <div class="slider-track">
+        <div class="slide"><img src="https://drive.google.com/thumbnail?id=1mPrs5_i7tEmbv4LBdm-NNmqS9qITH9RS&sz=w2400" alt="Comunidad 1"><span class="slide-caption">Comunidad</span></div>
+        <div class="slide"><img src="https://drive.google.com/thumbnail?id=1ZlzOawDXEMTwWB2_BrPdOoenTxRtILEQ&sz=w2400" alt="Comunidad 2"><span class="slide-caption">Comunidad</span></div>
+        <div class="slide"><img src="https://drive.google.com/thumbnail?id=1suqPw6j0xXUcro9QhPcF0qxVqybg2t5r&sz=w2400" alt="Comunidad 3"><span class="slide-caption">Comunidad</span></div>
+        <div class="slide"><img src="https://drive.google.com/thumbnail?id=1AzR8eyrivrVbjkywaGgQoPG6qcx1_sQO&sz=w2400" alt="Comunidad 4"><span class="slide-caption">Comunidad</span></div>
+        <div class="slide"><img src="https://drive.google.com/thumbnail?id=1C7ka-JdOq6t7zNrFL5Ywm3KRtlsgmSEp&sz=w2400" alt="Comunidad 5"><span class="slide-caption">Comunidad</span></div>
+        <div class="slide"><img src="https://drive.google.com/thumbnail?id=1LXCldaK52311Hu8-Ndw_185BaWLAq40t&sz=w2400" alt="Unidad 1"><span class="slide-caption">Unidad</span></div>
+        <div class="slide"><img src="https://drive.google.com/thumbnail?id=1ttVJu4-qynnHTfbRjG2EkzvCzMHR6IAT&sz=w2400" alt="Unidad 2"><span class="slide-caption">Unidad</span></div>
+        <div class="slide"><img src="https://drive.google.com/thumbnail?id=1B5-LPtoPy5Wlkdb_VVbmqv-gYm8BHUqF&sz=w2400" alt="Unidad 3"><span class="slide-caption">Unidad</span></div>
+        <div class="slide"><img src="https://drive.google.com/thumbnail?id=1wsVSUYwKS2jh1kG_9vrBAND11ScmReHZ&sz=w2400" alt="Unidad 4"><span class="slide-caption">Unidad</span></div>
+        <div class="slide"><img src="https://drive.google.com/thumbnail?id=1HlMj4JEEVtPnHzhQ8FkMoyM_CQ7tBEiY&sz=w2400" alt="Unidad 5"><span class="slide-caption">Unidad</span></div>
+      </div>
+    </div>
+    <div class="slider-nav">
+      <div class="slider-counter"><span class="cur">01</span> / 10</div>
+      <div class="slider-btns">
+        <button class="slider-btn" data-dir="-1" aria-label="Anterior"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M15 18l-6-6 6-6"/></svg></button>
+        <button class="slider-btn" data-dir="1" aria-label="Siguiente"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 6l6 6-6 6"/></svg></button>
+      </div>
+    </div>
+    <div class="slider-dots"></div>
+  </div>
 </section>
 
 <section class="page">
-<div class="sec-head"><span class="sec-num">03</span><h2>Formas de pago</h2></div>
-
-<div class="pagos-intro">
-<p>Hay dos caminos para entrar en ABC Sa Serra. Uno concentra la aportación al inicio, con una entrada del 30%. El otro la reparte en cuotas mensuales durante la obra, manteniendo la reserva y la firma ante notario en los mismos tramos.</p>
-<div class="pagos-callout">
-<strong>En ambos casos:</strong><br>
-Reserva de <strong>6.000 €</strong> · Contrato privado al <strong>10%</strong> · Saldo restante (<strong>60%</strong>) a la entrega de llaves.
-</div>
-</div>
-
-<div class="plan-tabs">
-<button class="plan-tab active" data-plan="A">1ª Residencia · A</button>
-<button class="plan-tab" data-plan="B">1ª Residencia · B</button>
-<button class="plan-tab" data-plan="C">2ª Residencia · A</button>
-<button class="plan-tab" data-plan="D">2ª Residencia · B</button>
-</div>
-
-<div class="plan active" data-plan="A">
-<div class="donut-wrap">
-<svg viewBox="0 0 42 42" style="width:100%;height:100%;transform:rotate(-90deg)">
-<circle cx="21" cy="21" r="15.915" fill="none" stroke="#ebe7dd" stroke-width="3"></circle>
-<circle cx="21" cy="21" r="15.915" fill="none" stroke="#E85D3F" stroke-width="3" stroke-dasharray="6 94" stroke-dashoffset="0"></circle>
-<circle cx="21" cy="21" r="15.915" fill="none" stroke="#f0a290" stroke-width="3" stroke-dasharray="10 90" stroke-dashoffset="-6"></circle>
-<circle cx="21" cy="21" r="15.915" fill="none" stroke="#3d3d3d" stroke-width="3" stroke-dasharray="24 76" stroke-dashoffset="-16"></circle>
-<circle cx="21" cy="21" r="15.915" fill="none" stroke="#8a8680" stroke-width="3" stroke-dasharray="60 40" stroke-dashoffset="-40"></circle>
-</svg>
-<div class="donut-center"><div class="kind">1ª Residencia</div><div class="variant">Plan A</div></div>
-</div>
-<div class="steps">
-<div class="step"><div class="step-dot" style="background:#E85D3F"></div><div class="step-main"><span class="step-label">Reserva</span><span class="step-when">Al reservar</span></div><span class="step-pct">6%</span></div>
-<div class="step"><div class="step-dot" style="background:#f0a290"></div><div class="step-main"><span class="step-label">Contrato privado</span><span class="step-when">30 días después</span></div><span class="step-pct">10%</span></div>
-<div class="step"><div class="step-dot" style="background:#3d3d3d"></div><div class="step-main"><span class="step-label">Aportación inicial</span><span class="step-when">Durante obra</span></div><span class="step-pct">24%</span></div>
-<div class="step"><div class="step-dot" style="background:#8a8680"></div><div class="step-main"><span class="step-label">Entrega de llaves</span><span class="step-when">Q1 2028</span></div><span class="step-pct">60%</span></div>
-</div>
-</div>
-
-<div class="plan" data-plan="B">
-<div class="donut-wrap">
-<svg viewBox="0 0 42 42" style="width:100%;height:100%;transform:rotate(-90deg)">
-<circle cx="21" cy="21" r="15.915" fill="none" stroke="#ebe7dd" stroke-width="3"></circle>
-<circle cx="21" cy="21" r="15.915" fill="none" stroke="#E85D3F" stroke-width="3" stroke-dasharray="6 94" stroke-dashoffset="0"></circle>
-<circle cx="21" cy="21" r="15.915" fill="none" stroke="#f0a290" stroke-width="3" stroke-dasharray="10 90" stroke-dashoffset="-6"></circle>
-<circle cx="21" cy="21" r="15.915" fill="none" stroke="#3d3d3d" stroke-width="3" stroke-dasharray="24 76" stroke-dashoffset="-16"></circle>
-<circle cx="21" cy="21" r="15.915" fill="none" stroke="#8a8680" stroke-width="3" stroke-dasharray="60 40" stroke-dashoffset="-40"></circle>
-</svg>
-<div class="donut-center"><div class="kind">1ª Residencia</div><div class="variant">Plan B</div></div>
-</div>
-<div class="steps">
-<div class="step"><div class="step-dot" style="background:#E85D3F"></div><div class="step-main"><span class="step-label">Reserva</span><span class="step-when">Al reservar</span></div><span class="step-pct">6%</span></div>
-<div class="step"><div class="step-dot" style="background:#f0a290"></div><div class="step-main"><span class="step-label">Contrato privado</span><span class="step-when">30 días después</span></div><span class="step-pct">10%</span></div>
-<div class="step"><div class="step-dot" style="background:#3d3d3d"></div><div class="step-main"><span class="step-label">Cuotas mensuales</span><span class="step-when">Hasta la entrega</span></div><span class="step-pct">24%</span></div>
-<div class="step"><div class="step-dot" style="background:#8a8680"></div><div class="step-main"><span class="step-label">Entrega de llaves</span><span class="step-when">Q1 2028</span></div><span class="step-pct">60%</span></div>
-</div>
-</div>
-
-<div class="plan" data-plan="C">
-<div class="donut-wrap">
-<svg viewBox="0 0 42 42" style="width:100%;height:100%;transform:rotate(-90deg)">
-<circle cx="21" cy="21" r="15.915" fill="none" stroke="#ebe7dd" stroke-width="3"></circle>
-<circle cx="21" cy="21" r="15.915" fill="none" stroke="#E85D3F" stroke-width="3" stroke-dasharray="6 94" stroke-dashoffset="0"></circle>
-<circle cx="21" cy="21" r="15.915" fill="none" stroke="#f0a290" stroke-width="3" stroke-dasharray="10 90" stroke-dashoffset="-6"></circle>
-<circle cx="21" cy="21" r="15.915" fill="none" stroke="#3d3d3d" stroke-width="3" stroke-dasharray="24 76" stroke-dashoffset="-16"></circle>
-<circle cx="21" cy="21" r="15.915" fill="none" stroke="#8a8680" stroke-width="3" stroke-dasharray="60 40" stroke-dashoffset="-40"></circle>
-</svg>
-<div class="donut-center"><div class="kind">2ª Residencia</div><div class="variant">Plan A</div></div>
-</div>
-<div class="steps">
-<div class="step"><div class="step-dot" style="background:#E85D3F"></div><div class="step-main"><span class="step-label">Reserva</span><span class="step-when">Al reservar</span></div><span class="step-pct">6%</span></div>
-<div class="step"><div class="step-dot" style="background:#f0a290"></div><div class="step-main"><span class="step-label">Contrato privado</span><span class="step-when">30 días después</span></div><span class="step-pct">10%</span></div>
-<div class="step"><div class="step-dot" style="background:#3d3d3d"></div><div class="step-main"><span class="step-label">Aportación inicial</span><span class="step-when">Durante obra</span></div><span class="step-pct">24%</span></div>
-<div class="step"><div class="step-dot" style="background:#8a8680"></div><div class="step-main"><span class="step-label">Entrega de llaves</span><span class="step-when">Q1 2028</span></div><span class="step-pct">60%</span></div>
-</div>
-</div>
-
-<div class="plan" data-plan="D">
-<div class="donut-wrap">
-<svg viewBox="0 0 42 42" style="width:100%;height:100%;transform:rotate(-90deg)">
-<circle cx="21" cy="21" r="15.915" fill="none" stroke="#ebe7dd" stroke-width="3"></circle>
-<circle cx="21" cy="21" r="15.915" fill="none" stroke="#E85D3F" stroke-width="3" stroke-dasharray="6 94" stroke-dashoffset="0"></circle>
-<circle cx="21" cy="21" r="15.915" fill="none" stroke="#f0a290" stroke-width="3" stroke-dasharray="10 90" stroke-dashoffset="-6"></circle>
-<circle cx="21" cy="21" r="15.915" fill="none" stroke="#3d3d3d" stroke-width="3" stroke-dasharray="24 76" stroke-dashoffset="-16"></circle>
-<circle cx="21" cy="21" r="15.915" fill="none" stroke="#8a8680" stroke-width="3" stroke-dasharray="60 40" stroke-dashoffset="-40"></circle>
-</svg>
-<div class="donut-center"><div class="kind">2ª Residencia</div><div class="variant">Plan B</div></div>
-</div>
-<div class="steps">
-<div class="step"><div class="step-dot" style="background:#E85D3F"></div><div class="step-main"><span class="step-label">Reserva</span><span class="step-when">Al reservar</span></div><span class="step-pct">6%</span></div>
-<div class="step"><div class="step-dot" style="background:#f0a290"></div><div class="step-main"><span class="step-label">Contrato privado</span><span class="step-when">30 días después</span></div><span class="step-pct">10%</span></div>
-<div class="step"><div class="step-dot" style="background:#3d3d3d"></div><div class="step-main"><span class="step-label">Cuotas mensuales</span><span class="step-when">Hasta la entrega</span></div><span class="step-pct">24%</span></div>
-<div class="step"><div class="step-dot" style="background:#8a8680"></div><div class="step-main"><span class="step-label">Entrega de llaves</span><span class="step-when">Q1 2028</span></div><span class="step-pct">60%</span></div>
-</div>
-</div>
+  <div class="sec-head"><span class="sec-num">02</span><h2>Fechas de obra</h2></div>
+  <div class="timeline">
+    <div class="milestone done"><div class="dot"></div><div class="date">Nov. 2025</div><div class="label">Inicio de obra</div></div>
+    <div class="milestone"><div class="dot"></div><div class="date">Oct. 2027</div><div class="label">Final de obra</div></div>
+    <div class="milestone"><div class="dot"></div><div class="date">Abr. 2028</div><div class="label">Entrega de llaves</div></div>
+  </div>
 </section>
 
 <section class="page">
-<div class="sec-head"><span class="sec-num">04</span><h2>FAQ comerciales</h2></div>
+  <div class="sec-head"><span class="sec-num">03</span><h2>Formas de pago</h2></div>
 
-<div class="cat-block">
-<div class="cat-title">Producto y entrega</div>
-<details><summary><svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 5v14M5 12h14"/></svg><span class="sum-text">¿Cuándo se entregan las viviendas?</span></summary><div class="acc-body">La entrega está prevista para el primer trimestre de 2028, una vez finalizada la obra en Q4 2027 y tramitada la Licencia de Primera Ocupación.</div></details>
-<details><summary><svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 5v14M5 12h14"/></svg><span class="sum-text">¿Se pueden realizar visitas a la promoción o a una vivienda piloto?</span></summary><div class="acc-body">Durante la obra no es posible acceder al solar por motivos de seguridad. No se ha previsto una vivienda piloto; la comercialización se apoya en planos, renders e infografías 3D.</div></details>
-<details><summary><svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 5v14M5 12h14"/></svg><span class="sum-text">¿Se puede personalizar la vivienda?</span></summary><div class="acc-body">Según el momento de la reserva, es posible escoger entre las opciones de acabados previstas por la promotora. Una vez ejecutadas determinadas fases de obra, esta opción deja de estar disponible.</div></details>
-<details><summary><svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 5v14M5 12h14"/></svg><span class="sum-text">¿Hay algún lavadero o espacio previsto para la lavadora?</span></summary><div class="acc-body">La lavadora se ubica dentro de la cocina, integrada bajo la encimera. No se ha previsto un cuarto de lavadero independiente en la vivienda.</div></details>
-</div>
+  <div class="pagos-intro">
+    <p>Elige el ritmo que mejor se adapte a ti. Todos los planes parten de una reserva inicial y culminan con la escritura en la entrega. Los pagos intermedios pueden repartirse a lo largo de la obra para hacerlos más llevaderos.</p>
+    <div class="pagos-callout">
+      <strong>Reserva</strong> inicial de 10.000 €.<br>
+      <strong>IVA</strong> del 10% aplicado a cada pago.
+    </div>
+  </div>
 
-<div class="cat-block">
-<div class="cat-title">Zonas comunes y servicios</div>
-<details><summary><svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 5v14M5 12h14"/></svg><span class="sum-text">¿Qué zonas comunes incluye la promoción?</span></summary><div class="acc-body">Piscina comunitaria, jardines, solárium en la cubierta de cada edificio y acceso rodado con control para los propietarios.</div></details>
-<details><summary><svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 5v14M5 12h14"/></svg><span class="sum-text">¿Para qué sirven las placas fotovoltaicas de la cubierta comunitaria?</span></summary><div class="acc-body">Las placas fotovoltaicas instaladas en la cubierta comunitaria están destinadas a la producción de agua caliente sanitaria (ACS) para las viviendas.</div></details>
-<details><summary><svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 5v14M5 12h14"/></svg><span class="sum-text">¿Incluye plaza de parking y trastero?</span></summary><div class="acc-body">Sí. Todas las viviendas incluyen una plaza de parking y un trastero vinculados en el PVP.</div></details>
-</div>
+  <div class="plan-tabs" id="plan-tabs">
+    <button type="button" class="plan-tab active" data-plan="1a">1ª residencia · A</button>
+    <button type="button" class="plan-tab" data-plan="1b">1ª residencia · B</button>
+    <button type="button" class="plan-tab" data-plan="1c">1ª residencia · C</button>
+    <button type="button" class="plan-tab" data-plan="ia">Inversor · A</button>
+    <button type="button" class="plan-tab" data-plan="ib">Inversor · B</button>
+  </div>
 
-<div class="cat-block">
-<div class="cat-title">Compra y financiación</div>
-<details><summary><svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 5v14M5 12h14"/></svg><span class="sum-text">¿Puedo financiar la compra con una hipoteca?</span></summary><div class="acc-body">Sí. La promoción es compatible con hipoteca. Las aportaciones previas a la entrega se realizan con recursos propios; la hipoteca se formaliza en el momento de la escritura pública.</div></details>
-<details><summary><svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 5v14M5 12h14"/></svg><span class="sum-text">¿Las cantidades entregadas están garantizadas?</span></summary><div class="acc-body">Sí. Todas las cantidades entregadas a cuenta están avaladas por una entidad bancaria conforme a la Ley 38/1999 de Ordenación de la Edificación.</div></details>
-</div>
+  <div class="plan active" data-plan="1a">
+    <div class="donut-wrap">
+      <svg viewBox="0 0 200 200" width="100%" height="100%">
+        <circle cx="100" cy="100" r="80" fill="none" stroke="#E85D3F" stroke-width="30" stroke-dasharray="50.27 502.65" transform="rotate(-90 100 100)"/>
+        <circle cx="100" cy="100" r="80" fill="none" stroke="#EA9758" stroke-width="30" stroke-dasharray="75.4 502.65" stroke-dashoffset="-50.27" transform="rotate(-90 100 100)"/>
+        <circle cx="100" cy="100" r="80" fill="none" stroke="#8F5B3F" stroke-width="30" stroke-dasharray="377 502.65" stroke-dashoffset="-125.67" transform="rotate(-90 100 100)"/>
+      </svg>
+      <div class="donut-center"><div class="kind">1ª Residencia</div><div class="variant">Plan A</div></div>
+    </div>
+    <div class="steps">
+      <div class="step"><div class="step-dot" style="background:#E85D3F"></div><div class="step-main"><div class="step-label">Contrato privado de compraventa</div><div class="step-when">A la firma</div></div><div class="step-pct">10%</div></div>
+      <div class="step"><div class="step-dot" style="background:#EA9758"></div><div class="step-main"><div class="step-label">Pagos durante la obra</div><div class="step-when">Según avance</div></div><div class="step-pct">15%</div></div>
+      <div class="step"><div class="step-dot" style="background:#8F5B3F"></div><div class="step-main"><div class="step-label">Escritura pública</div><div class="step-when">Abr. 2028</div></div><div class="step-pct">75%</div></div>
+    </div>
+  </div>
+
+  <div class="plan" data-plan="1b">
+    <div class="donut-wrap">
+      <svg viewBox="0 0 200 200" width="100%" height="100%">
+        <circle cx="100" cy="100" r="80" fill="none" stroke="#E85D3F" stroke-width="30" stroke-dasharray="50.27 502.65" transform="rotate(-90 100 100)"/>
+        <circle cx="100" cy="100" r="80" fill="none" stroke="#EA9758" stroke-width="30" stroke-dasharray="50.27 502.65" stroke-dashoffset="-50.27" transform="rotate(-90 100 100)"/>
+        <circle cx="100" cy="100" r="80" fill="none" stroke="#CA7D50" stroke-width="30" stroke-dasharray="25.13 502.65" stroke-dashoffset="-100.53" transform="rotate(-90 100 100)"/>
+        <circle cx="100" cy="100" r="80" fill="none" stroke="#8F5B3F" stroke-width="30" stroke-dasharray="377 502.65" stroke-dashoffset="-125.67" transform="rotate(-90 100 100)"/>
+      </svg>
+      <div class="donut-center"><div class="kind">1ª Residencia</div><div class="variant">Plan B</div></div>
+    </div>
+    <div class="steps">
+      <div class="step"><div class="step-dot" style="background:#E85D3F"></div><div class="step-main"><div class="step-label">Contrato privado de compraventa</div><div class="step-when">A la firma</div></div><div class="step-pct">10%</div></div>
+      <div class="step"><div class="step-dot" style="background:#EA9758"></div><div class="step-main"><div class="step-label">Hito 1</div><div class="step-when">Sep. 2026</div></div><div class="step-pct">10%</div></div>
+      <div class="step"><div class="step-dot" style="background:#CA7D50"></div><div class="step-main"><div class="step-label">Hito 2</div><div class="step-when">Mar. 2027</div></div><div class="step-pct">5%</div></div>
+      <div class="step"><div class="step-dot" style="background:#8F5B3F"></div><div class="step-main"><div class="step-label">Escritura pública</div><div class="step-when">Abr. 2028</div></div><div class="step-pct">75%</div></div>
+    </div>
+  </div>
+
+  <div class="plan" data-plan="1c">
+    <div class="donut-wrap">
+      <svg viewBox="0 0 200 200" width="100%" height="100%">
+        <circle cx="100" cy="100" r="80" fill="none" stroke="#E85D3F" stroke-width="30" stroke-dasharray="50.27 502.65" transform="rotate(-90 100 100)"/>
+        <circle cx="100" cy="100" r="80" fill="none" stroke="#EA9758" stroke-width="30" stroke-dasharray="25.13 502.65" stroke-dashoffset="-50.27" transform="rotate(-90 100 100)"/>
+        <circle cx="100" cy="100" r="80" fill="none" stroke="#CA7D50" stroke-width="30" stroke-dasharray="25.13 502.65" stroke-dashoffset="-75.4" transform="rotate(-90 100 100)"/>
+        <circle cx="100" cy="100" r="80" fill="none" stroke="#A76645" stroke-width="30" stroke-dasharray="25.13 502.65" stroke-dashoffset="-100.53" transform="rotate(-90 100 100)"/>
+        <circle cx="100" cy="100" r="80" fill="none" stroke="#8F5B3F" stroke-width="30" stroke-dasharray="377 502.65" stroke-dashoffset="-125.66" transform="rotate(-90 100 100)"/>
+      </svg>
+      <div class="donut-center"><div class="kind">1ª Residencia</div><div class="variant">Plan C</div></div>
+    </div>
+    <div class="steps">
+      <div class="step"><div class="step-dot" style="background:#E85D3F"></div><div class="step-main"><div class="step-label">Contrato privado de compraventa</div><div class="step-when">A la firma</div></div><div class="step-pct">10%</div></div>
+      <div class="step"><div class="step-dot" style="background:#EA9758"></div><div class="step-main"><div class="step-label">Hito 1</div><div class="step-when">Abr. 2026</div></div><div class="step-pct">5%</div></div>
+      <div class="step"><div class="step-dot" style="background:#CA7D50"></div><div class="step-main"><div class="step-label">Hito 2</div><div class="step-when">Sep. 2026</div></div><div class="step-pct">5%</div></div>
+      <div class="step"><div class="step-dot" style="background:#A76645"></div><div class="step-main"><div class="step-label">Hito 3</div><div class="step-when">Mar. 2027</div></div><div class="step-pct">5%</div></div>
+      <div class="step"><div class="step-dot" style="background:#8F5B3F"></div><div class="step-main"><div class="step-label">Escritura pública</div><div class="step-when">Abr. 2028</div></div><div class="step-pct">75%</div></div>
+    </div>
+  </div>
+
+  <div class="plan" data-plan="ia">
+    <div class="donut-wrap">
+      <svg viewBox="0 0 200 200" width="100%" height="100%">
+        <circle cx="100" cy="100" r="80" fill="none" stroke="#E85D3F" stroke-width="30" stroke-dasharray="75.4 502.65" transform="rotate(-90 100 100)"/>
+        <circle cx="100" cy="100" r="80" fill="none" stroke="#EA9758" stroke-width="30" stroke-dasharray="50.27 502.65" stroke-dashoffset="-75.4" transform="rotate(-90 100 100)"/>
+        <circle cx="100" cy="100" r="80" fill="none" stroke="#8F5B3F" stroke-width="30" stroke-dasharray="377 502.65" stroke-dashoffset="-125.67" transform="rotate(-90 100 100)"/>
+      </svg>
+      <div class="donut-center"><div class="kind">Inversor</div><div class="variant">Plan A</div></div>
+    </div>
+    <div class="steps">
+      <div class="step"><div class="step-dot" style="background:#E85D3F"></div><div class="step-main"><div class="step-label">Contrato privado de compraventa</div><div class="step-when">A la firma</div></div><div class="step-pct">15%</div></div>
+      <div class="step"><div class="step-dot" style="background:#EA9758"></div><div class="step-main"><div class="step-label">Pagos durante la obra</div><div class="step-when">Según avance</div></div><div class="step-pct">10%</div></div>
+      <div class="step"><div class="step-dot" style="background:#8F5B3F"></div><div class="step-main"><div class="step-label">Escritura pública</div><div class="step-when">Abr. 2028</div></div><div class="step-pct">75%</div></div>
+    </div>
+  </div>
+
+  <div class="plan" data-plan="ib">
+    <div class="donut-wrap">
+      <svg viewBox="0 0 200 200" width="100%" height="100%">
+        <circle cx="100" cy="100" r="80" fill="none" stroke="#E85D3F" stroke-width="30" stroke-dasharray="75.4 502.65" transform="rotate(-90 100 100)"/>
+        <circle cx="100" cy="100" r="80" fill="none" stroke="#EA9758" stroke-width="30" stroke-dasharray="25.13 502.65" stroke-dashoffset="-75.4" transform="rotate(-90 100 100)"/>
+        <circle cx="100" cy="100" r="80" fill="none" stroke="#CA7D50" stroke-width="30" stroke-dasharray="25.13 502.65" stroke-dashoffset="-100.53" transform="rotate(-90 100 100)"/>
+        <circle cx="100" cy="100" r="80" fill="none" stroke="#8F5B3F" stroke-width="30" stroke-dasharray="377 502.65" stroke-dashoffset="-125.67" transform="rotate(-90 100 100)"/>
+      </svg>
+      <div class="donut-center"><div class="kind">Inversor</div><div class="variant">Plan B</div></div>
+    </div>
+    <div class="steps">
+      <div class="step"><div class="step-dot" style="background:#E85D3F"></div><div class="step-main"><div class="step-label">Contrato privado de compraventa</div><div class="step-when">A la firma</div></div><div class="step-pct">15%</div></div>
+      <div class="step"><div class="step-dot" style="background:#EA9758"></div><div class="step-main"><div class="step-label">Hito 1</div><div class="step-when">Sep. 2026</div></div><div class="step-pct">5%</div></div>
+      <div class="step"><div class="step-dot" style="background:#CA7D50"></div><div class="step-main"><div class="step-label">Hito 2</div><div class="step-when">Mar. 2027</div></div><div class="step-pct">5%</div></div>
+      <div class="step"><div class="step-dot" style="background:#8F5B3F"></div><div class="step-main"><div class="step-label">Escritura pública</div><div class="step-when">Abr. 2028</div></div><div class="step-pct">75%</div></div>
+    </div>
+  </div>
 </section>
 
 <section class="page obj-section">
-<div class="sec-head"><span class="sec-num">05</span><h2>Objeciones frecuentes</h2></div>
-<div class="faq-accordion">
-<details><summary><svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 5v14M5 12h14"/></svg><span class="sum-text">Está lejos del centro de Sant Antoni</span></summary><div class="acc-body">La ubicación en Carrer des Tords es precisamente uno de los valores del producto: zona residencial consolidada, a pocos minutos en coche del puerto y los servicios, pero sin la saturación turística del centro. Quien busca primera residencia valora la tranquilidad; quien busca segunda residencia, la cercanía a las calas sin el bullicio.</div></details>
-<details><summary><svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 5v14M5 12h14"/></svg><span class="sum-text">Prefiero esperar a ver la obra terminada</span></summary><div class="acc-body">Entrar en la fase actual permite acceder al precio de lanzamiento y, en muchos casos, elegir unidad y acabados. Comprar con la obra terminada implica pagar el valor consolidado a mercado, con menos margen de negociación y sin posibilidad de personalización.</div></details>
-<details><summary><svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 5v14M5 12h14"/></svg><span class="sum-text">El plazo de entrega es muy largo</span></summary><div class="acc-body">Q1 2028 permite planificar la operación con tiempo: reunir recursos propios, preparar la hipoteca y encajar la entrada con otras decisiones patrimoniales. Además, las aportaciones se distribuyen durante toda la obra, no se concentran al inicio.</div></details>
-<details><summary><svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 5v14M5 12h14"/></svg><span class="sum-text">No tengo el 30% inicial ahora mismo</span></summary><div class="acc-body">Por eso existe el Plan B: la aportación durante la obra se reparte en cuotas mensuales en lugar de concentrarse al inicio. La reserva y el contrato privado mantienen los mismos porcentajes, y el 60% restante se paga con la hipoteca al entregar llaves.</div></details>
-</div>
+  <div class="sec-head"><span class="sec-num">04</span><h2>Objeciones</h2></div>
+
+  <div class="cat-block">
+    <div class="cat-title">Diseño</div>
+    <details><summary><svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 5v14M5 12h14"/></svg><span class="sum-text">Los acabados se ven estándar para el PVP que piden</span></summary><div class="acc-body">Las unidades incluyen de serie aerotermia, placas FV para ACS, carpintería climalit y acabados coordinados por el equipo de interiorismo del promotor. Los upgrades premium (cocina panelada, encimeras, packs de electrodomésticos) están disponibles mientras la obra esté en fase de estructura.</div></details>
+    <details><summary><svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 5v14M5 12h14"/></svg><span class="sum-text">No puedo personalizar la vivienda a mi gusto</span></summary><div class="acc-body">Se admiten modificaciones de cocina (color del mueble, packs de electrodomésticos) durante la fase de estructura. El resto del acabado sigue la paleta unificada del proyecto para preservar la coherencia arquitectónica y el valor de reventa.</div></details>
+    <details><summary><svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 5v14M5 12h14"/></svg><span class="sum-text">Parece un bloque residencial, no un producto exclusivo</span></summary><div class="acc-body">Son 30 unidades en 2 bloques de baja altura con piscina, solárium y zonas ajardinadas. La escala reducida, las tres plantas y la proporción 1:1 de parking y trastero mantienen el carácter residencial y diferenciado.</div></details>
+  </div>
+
+  <div class="cat-block">
+    <div class="cat-title">Mantenimiento</div>
+    <details><summary><svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 5v14M5 12h14"/></svg><span class="sum-text">Los gastos de comunidad me parecen elevados</span></summary><div class="acc-body">120,39 €/mes cubren mantenimiento de piscina, zonas ajardinadas, iluminación común, limpieza y seguro. En Sant Antoni, para promociones equivalentes con piscina comunitaria, la media de mercado está entre 110 y 150 €/mes.</div></details>
+    <details><summary><svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 5v14M5 12h14"/></svg><span class="sum-text">Me preocupa el mantenimiento de la piscina y zonas comunes</span></summary><div class="acc-body">La comunidad tendrá contrato de mantenimiento profesional. El presupuesto anual ya contempla limpieza, tratamiento químico y reparaciones menores, y está cerrado en la memoria de la promotora.</div></details>
+  </div>
+
+  <div class="cat-block">
+    <div class="cat-title">Precio</div>
+    <details><summary><svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 5v14M5 12h14"/></svg><span class="sum-text">El PVP está por encima del €/m² medio de Sant Antoni</span></summary><div class="acc-body">El precio refleja obra nueva con calificación B, placas FV, aerotermia y plaza de parking + trastero incluidos. El stock de obra nueva en el cuadrante sur de Sant Antoni es muy limitado, lo que sostiene la prima.</div></details>
+    <details><summary><svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 5v14M5 12h14"/></svg><span class="sum-text">Con IVA y gastos la inversión total se dispara</span></summary><div class="acc-body">El IVA del 10% está previsto en el calendario de pagos y se abona de forma prorrateada. El 75% del PVP se satisface en la escritura de marzo de 2028, lo que deja al comprador ~2 años para planificar la financiación.</div></details>
+  </div>
+
+  <div class="cat-block">
+    <div class="cat-title">Privacidad</div>
+    <details><summary><svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 5v14M5 12h14"/></svg><span class="sum-text">Las unidades están muy cerca entre sí</span></summary><div class="acc-body">Las 30 unidades se distribuyen en 2 bloques orientados para maximizar la privacidad visual. Las terrazas están separadas por paramentos laterales y la vegetación de las zonas comunes refuerza el aislamiento.</div></details>
+    <details><summary><svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 5v14M5 12h14"/></svg><span class="sum-text">En temporada la piscina y zonas comunes van a estar saturadas</span></summary><div class="acc-body">30 unidades sobre ~60 m² de piscina y 500 m² de solárium permiten un uso distendido. Los 1ª residentes y los inversores suelen solaparse en distintos periodos, lo que equilibra la ocupación durante el año.</div></details>
+  </div>
+
+  <div class="cat-block">
+    <div class="cat-title">Servicios</div>
+    <details><summary><svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 5v14M5 12h14"/></svg><span class="sum-text">No tiene conserjería ni portería 24/7</span></summary><div class="acc-body">Se prevé videoportero por unidad y control de accesos en el portal. La promoción es residencial, no apart-hotel: los perfiles que buscan conserjería suelen orientarse a producto hotelero o serviced apartments con cuotas muy superiores.</div></details>
+    <details><summary><svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 5v14M5 12h14"/></svg><span class="sum-text">Está lejos de comercios y restauración de referencia</span></summary><div class="acc-body">El centro de San Josep está a 5 min en coche, con supermercado, farmacia, restauración y servicios básicos. Ibiza ciudad y Marina Ibiza, a 15-20 min. La tranquilidad del entorno es un valor diferencial frente a zonas más saturadas.</div></details>
+  </div>
+
+  <div class="cat-block">
+    <div class="cat-title">Sostenibilidad</div>
+    <details><summary><svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 5v14M5 12h14"/></svg><span class="sum-text">Tiene energética B en lugar de A</span></summary><div class="acc-body">La calificación B es el estándar alcanzable en obra nueva con criterios de confort habitacional. Una calificación A exigiría inversiones en aislamiento, envolvente y equipos con impacto directo y significativo en el PVP.</div></details>
+    <details><summary><svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 5v14M5 12h14"/></svg><span class="sum-text">Las placas solo cubren ACS, no la electricidad</span></summary><div class="acc-body">El diseño fotovoltaico prioriza la cobertura de ACS por ser el consumo más constante y estable durante todo el año. La instalación es ampliable por cada propietario a título particular tras la entrega.</div></details>
+  </div>
+
+  <div class="cat-block">
+    <div class="cat-title">Zona</div>
+    <details><summary><svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 5v14M5 12h14"/></svg><span class="sum-text">Sant Antoni es zona de ocio masivo</span></summary><div class="acc-body">La promoción está en Carrer des Tords, en el cuadrante residencial de Sant Antoni, alejado del West End y de los circuitos de ocio nocturno. El entorno es tranquilo, con vivienda unifamiliar y calles poco transitadas.</div></details>
+    <details><summary><svg class="chev" viewBox="0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 5v14M5 12h14"/></svg><span class="sum-text">Está lejos de las mejores playas y de Ibiza ciudad</span></summary><div class="acc-body">Cala Bassa, Cala Conta y Cala Gracioneta están a 5-10 min. Ibiza ciudad y Marina Ibiza a 15-20 min. Ubicación equilibrada para 1ª residencia con uso frecuente e inversión con uso personal puntual.</div></details>
+  </div>
+</section>
+
+<section class="page">
+  <div class="sec-head"><span class="sec-num">05</span><h2>FAQs</h2></div>
+  <div class="faq-accordion">
+    <details><summary><svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 5v14M5 12h14"/></svg><span class="sum-text">¿Se pueden realizar visitas a la promoción? ¿Habrá vivienda piloto?</span></summary><div class="acc-body">No, aún no se pueden realizar visitas a la promoción, y no habrá vivienda piloto.</div></details>
+    <details><summary><svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 5v14M5 12h14"/></svg><span class="sum-text">¿Se trata de vivienda IBAVI?</span></summary><div class="acc-body">No se trata de vivienda IBAVI. La promoción está acogida al plan autonómico de vivienda a precio limitado (Decret 3/2024), lo que garantiza un precio máximo regulado por m² construido, pero se comercializa como vivienda libre con plena propiedad.</div></details>
+    <details><summary><svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 5v14M5 12h14"/></svg><span class="sum-text">¿Cuáles son los gastos de comunidad?</span></summary><div class="acc-body">1.444,67 € anuales por vivienda (120,39 € mensuales). Incluye mantenimiento de zonas comunes, piscina, solárium, limpieza y seguro del edificio.</div></details>
+    <details><summary><svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 5v14M5 12h14"/></svg><span class="sum-text">¿Cómo quedará la acera de la fachada?</span></summary><div class="acc-body">La acera de la fachada se hará más grande de la que hay actualmente.</div></details>
+    <details><summary><svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 5v14M5 12h14"/></svg><span class="sum-text">¿Dónde va la zona de lavadero?</span></summary><div class="acc-body">En los apartamentos de una habitación, las lavadoras irán en el aseo. En los de dos habitaciones, se prevé que irán en la cocina.</div></details>
+    <details><summary><svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 5v14M5 12h14"/></svg><span class="sum-text">¿Las cantidades entregadas están avaladas?</span></summary><div class="acc-body">Sí. Todas las cantidades entregadas a cuenta están avaladas por entidad bancaria durante toda la ejecución de la obra, conforme a la Ley 20/2015.</div></details>
+    <details><summary><svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 5v14M5 12h14"/></svg><span class="sum-text">¿Se puede comprar como persona física o jurídica?</span></summary><div class="acc-body">Sí, se admite la compra tanto como persona física como jurídica, en ambos casos con los mismos planes de pago disponibles.</div></details>
+    <details><summary><svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 5v14M5 12h14"/></svg><span class="sum-text">¿Cómo son las zonas comunes?</span></summary><div class="acc-body">La promoción cuenta con piscina de aproximadamente 60 m², dos solariums de 250 m² cada uno y zonas ajardinadas comunes.</div></details>
+    <details><summary><svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 5v14M5 12h14"/></svg><span class="sum-text">¿Parking y trastero están incluidos en el precio?</span></summary><div class="acc-body">Sí, cada vivienda incluye una plaza de parking y un trastero como parte del precio de compra.</div></details>
+    <details><summary><svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 5v14M5 12h14"/></svg><span class="sum-text">¿Se puede personalizar la cocina o los acabados?</span></summary><div class="acc-body">La memoria de calidades está cerrada. En función del momento de la compra y del estado de la obra, podrán valorarse modificaciones puntuales con el estudio técnico del promotor.</div></details>
+  </div>
 </section>
 
 <footer>
-<div class="footer-grid">
-<div class="footer-title">¿Necesitas más información? Consulta la <span class="coral">wiki del proyecto</span>.</div>
-<a href="https://www.notion.so/ABC-Sa-Serra-261e2e0b98db80baa2d6c3b5b775abfd" class="wiki-btn" target="_blank" rel="noopener">Abrir wiki <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a>
-</div>
-<div class="footer-bottom">
-<img src="https://drive.google.com/thumbnail?id=1y5P8k3yEB_21t3jKwqSB1RLesr094tr8&sz=w400" alt="noonica" class="logo" />
-<span>Dossier interno · <span class="js-date">22 abril 2026</span></span>
-</div>
+  <div class="footer-grid">
+    <div class="footer-title serif">Toda la documentación operativa del proyecto está disponible en la <span class="coral">wiki interna de Noonica.</span></div>
+    <a class="wiki-btn" href="https://www.notion.so/thehouselight/SAP1361_CO30A-ABC-Sa-Serra-ABC-Sa-Serra-Wiki-18fb6a51ca568027888ee0e6426006cd" target="_blank">Abrir wiki →</a>
+  </div>
+  <div class="footer-bottom">
+    <img src="https://drive.google.com/thumbnail?id=1y5P8k3yEB_21t3jKwqSB1RLesr094tr8&sz=w400" alt="noonica" class="logo">
+    <span>Uso interno · Confidencial · <span class="js-date">22 abril 2026</span></span>
+  </div>
 </footer>
 
 <script>
-// Fecha en español
-(function(){
-var meses=['enero','febrero','marzo','abril','mayo','junio','julio','agosto','septiembre','octubre','noviembre','diciembre'];
-var d=new Date();
-var txt=d.getDate()+' '+meses[d.getMonth()]+' '+d.getFullYear();
-document.querySelectorAll('.js-date').forEach(function(el){el.textContent=txt});
-})();
+  (function(){
+    const d = new Date();
+    const meses = ['enero','febrero','marzo','abril','mayo','junio','julio','agosto','septiembre','octubre','noviembre','diciembre'];
+    const txt = `${d.getDate()} ${meses[d.getMonth()]} ${d.getFullYear()}`;
+    document.querySelectorAll('.js-date').forEach(el => el.textContent = txt);
+  })();
 
-// Slider
-(function(){
-var s=document.getElementById('gallery');if(!s)return;
-var track=s.querySelector('.slider-track');
-var slides=s.querySelectorAll('.slide');
-var total=slides.length;
-var cur=0;
-var dotsWrap=s.querySelector('.slider-dots');
-var counter=s.querySelector('.slider-counter .cur');
-for(var i=0;i<total;i++){
-var b=document.createElement('button');
-b.className='slider-dot'+(i===0?' active':'');
-b.setAttribute('aria-label','Ir a slide '+(i+1));
-(function(idx){b.addEventListener('click',function(){go(idx)})})(i);
-dotsWrap.appendChild(b);
-}
-function go(n){
-cur=(n+total)%total;
-track.style.transform='translateX('+(-cur*100)+'%)';
-counter.textContent=(cur+1<10?'0':'')+(cur+1);
-dotsWrap.querySelectorAll('.slider-dot').forEach(function(d,i){d.classList.toggle('active',i===cur)});
-}
-s.querySelectorAll('.slider-btn').forEach(function(b){
-b.addEventListener('click',function(){go(cur+parseInt(b.dataset.dir,10))});
-});
-// Swipe
-var x0=null;
-track.addEventListener('touchstart',function(e){x0=e.touches[0].clientX},{passive:true});
-track.addEventListener('touchend',function(e){
-if(x0===null)return;
-var dx=e.changedTouches[0].clientX-x0;
-if(Math.abs(dx)>40)go(cur+(dx<0?1:-1));
-x0=null;
-},{passive:true});
-})();
+  (function(){
+    const tabsContainer = document.getElementById('plan-tabs');
+    if (!tabsContainer) return;
 
-// Tabs planes de pago
-(function(){
-var tabs=document.querySelectorAll('.plan-tab');
-var plans=document.querySelectorAll('.plan');
-tabs.forEach(function(t){
-t.addEventListener('click',function(){
-var p=t.dataset.plan;
-tabs.forEach(function(x){x.classList.toggle('active',x===t)});
-plans.forEach(function(x){x.classList.toggle('active',x.dataset.plan===p)});
-});
-});
-})();
+    const activate = (plan) => {
+      document.querySelectorAll('.plan-tab').forEach(t => {
+        t.classList.toggle('active', t.dataset.plan === plan);
+      });
+      document.querySelectorAll('.plan').forEach(p => {
+        p.classList.toggle('active', p.dataset.plan === plan);
+      });
+    };
+
+    const handler = (e) => {
+      const tab = e.target.closest('.plan-tab');
+      if (!tab || !tabsContainer.contains(tab)) return;
+      e.preventDefault();
+      activate(tab.dataset.plan);
+    };
+
+    tabsContainer.addEventListener('click', handler);
+    tabsContainer.addEventListener('touchend', (e) => {
+      const tab = e.target.closest('.plan-tab');
+      if (!tab) return;
+      e.preventDefault();
+      activate(tab.dataset.plan);
+    }, {passive: false});
+  })();
+
+  (function(){
+    const slider = document.getElementById('gallery');
+    const track = slider.querySelector('.slider-track');
+    const slides = slider.querySelectorAll('.slide');
+    const counter = slider.querySelector('.slider-counter .cur');
+    const dotsWrap = slider.querySelector('.slider-dots');
+    let idx = 0;
+    const total = slides.length;
+
+    slides.forEach((_,i) => {
+      const d = document.createElement('button');
+      d.className = 'slider-dot' + (i===0?' active':'');
+      d.addEventListener('click', () => go(i));
+      dotsWrap.appendChild(d);
+    });
+    const dots = dotsWrap.querySelectorAll('.slider-dot');
+
+    function go(i){
+      idx = (i + total) % total;
+      track.style.transform = `translateX(-${idx*100}%)`;
+      counter.textContent = String(idx+1).padStart(2,'0');
+      dots.forEach((d,k) => d.classList.toggle('active', k===idx));
+    }
+    slider.querySelectorAll('.slider-btn').forEach(btn => {
+      btn.addEventListener('click', () => go(idx + parseInt(btn.dataset.dir)));
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowLeft') go(idx-1);
+      if (e.key === 'ArrowRight') go(idx+1);
+    });
+  })();
 </script>
 
 </body>
